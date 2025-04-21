@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+arxiv_papers.db
+arxiv_papers.db-journal
