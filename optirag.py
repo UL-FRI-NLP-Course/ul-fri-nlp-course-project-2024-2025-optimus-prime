@@ -90,7 +90,7 @@ class OptimimusRAG:
             sort_order=arxiv.SortOrder.Descending,
         )
         
-        results = list(self.arxiv_client.search(search))
+        results = list(self.arxiv_client.results(search))
         
         papers, summaries = [], []
         for result in results:
@@ -116,7 +116,7 @@ class OptimimusRAG:
         """
         
         # Get papers and summaries from arxiv
-        papers, summaries = self.query_arxiv(query)
+        papers, summaries = self._query_arxiv(query)
         
         # Embed original user query
         embedded_query = self._encode_query([query])
@@ -156,7 +156,7 @@ class OptimimusRAG:
         """
         
         prompt_template = PromptTemplate(
-            input_variables=["context", "question"],
+            input_variables=["context", "query"],
             template=PROMPT_TEMPLATE.strip(),
         )
         
@@ -171,7 +171,7 @@ class OptimimusRAG:
         """
         Generate a response using the LLM chain.
         """
-        response = self.chain.run(context=context, question=query)
+        response = self.chain.run(context=context, query=query)
         return response
         
 if __name__ == "__main__":
@@ -189,6 +189,6 @@ if __name__ == "__main__":
     context = gpt.create_context(papers)
 
 
-    response = gpt.generate_response(gpt.chain, context, query)     
+    response = gpt.generate_response(context, query)     
     print(response)
     
