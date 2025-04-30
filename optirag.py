@@ -17,7 +17,10 @@ from langchain_core.prompts import PromptTemplate
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer 
 import arxiv 
+import warnings
 from langchain.chains import LLMChain
+
+warnings.filterwarnings("ignore")
 
 class OptimimusRAG:
     def __init__(self, llm_model, device):
@@ -143,7 +146,9 @@ class OptimimusRAG:
     def _get_prompt_chain(self):
         PROMPT_TEMPLATE = """
         You are a helpful AI QA assistant, for answering querries about research methods.
-        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        If you don't know the answer, just say that you don't know, don't try to make up an answer. This is important!
+        You will also be receiving a history of the conversation, so you can use it to answer the question. When using the history, be sure to use the previous question, to consider the context of the currect question.
+        You will be given a context of the most relevant papers, and you should use them to answer the question.
 
         ```
         {context}
@@ -182,13 +187,19 @@ if __name__ == "__main__":
     )
     
     gpt.initialize_model()
+    chat = [{"query": "", "response": ""}]
+    i = 0
+    while True:
     
-    query = "What is the best way to train a neural network?"
+        query = input("Sup king\n\n" if i == 0 else "What else do you want to know\n\n") # "What is the best way to train a neural network?"
+        
     
-    papers = gpt.find_similar_papers(query, k=5)
-    context = gpt.create_context(papers)
+        papers = gpt.find_similar_papers(chat[-1]["query"] + query, k=5)
+        context = gpt.create_context(papers)
 
+        response = gpt.generate_response(context, query)     
+        chat.append({"query": query, "response": response})
 
-    response = gpt.generate_response(context, query)     
-    print(response)
+        print(response)
+        i += 1
     
