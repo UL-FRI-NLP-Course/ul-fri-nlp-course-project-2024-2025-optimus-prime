@@ -1,12 +1,3 @@
-# ## TODO 
-# - maybe some better model for embedding extraction
-# - better prompt for the chatbot 
-# - somehow test the implementation
-# - Adding citations to score the papers
-# - somehow separate the user query and searching for papers on arxiv
-
-# ## Generate a response by incoroprating the retrieved papers with a chatbot
-
 # ## Larger model
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig, AutoConfig
