@@ -17,8 +17,7 @@
 ## Current results
 - To evaluate performance, we queried both the base chatbot and our RAG-enhanced model, then compared their responses.
 - To highlight the improvement, we focused on papers or methods published after the release of the base chatbot. 
-
-# TODO : input results
+- The results are found in the `testing_th_model.docx` file. They are more description based and not so much definitive.
 
 ## Future directions
 - Adding other data to score papers (like citations - use heuristics), that isn't available through the `arxiv` api
