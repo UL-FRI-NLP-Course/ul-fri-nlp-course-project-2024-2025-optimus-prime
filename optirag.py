@@ -188,7 +188,12 @@ if __name__ == "__main__":
     papers = gpt.find_similar_papers(query, k=5)
     context = gpt.create_context(papers)
 
-
-    response = gpt.generate_response(context, query)     
-    print(response)
     
+    rag_response = gpt.generate_response(context, query)     
+    normal_response = gpt.generate_response("", query)
+    print("Rag response:")
+    print("="*100)
+    print(rag_response)
+    print("Normal response:")
+    print("="*100)
+    print(normal_response)
