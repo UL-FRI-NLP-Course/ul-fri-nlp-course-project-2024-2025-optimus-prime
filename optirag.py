@@ -88,7 +88,7 @@ class OptimimusRAG:
         """
         search = arxiv.Search(
             query=query,
-            max_results=10,
+            max_results=30,
             sort_by=arxiv.SortCriterion.Relevance,
             sort_order=arxiv.SortOrder.Descending,
         )
