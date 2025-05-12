@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.6)  21 MAR 2025 18:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.6)  12 MAY 2025 20:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -872,7 +872,16 @@ Underfull \vbox (badness 1902) has occurred while \output is active []
  [1{C:/Users/marko/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
- <./logo.png>] (report.bbl
+ <./logo.png>]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 131.
+ (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ (report.bbl
 Underfull \hbox (badness 1033) in paragraph at lines 10--13
 \OT1/ptm/m/n/10 (+20) and Jian-feng Gao.  Retrieval-augmented gen-er-a-tion
  []
@@ -898,21 +907,33 @@ Underfull \hbox (badness 4193) in paragraph at lines 36--41
 \OT1/ptm/m/n/10 (+20) Bench-mark-ing large lan-guage mod-els in retrieval-
  []
 
-) 
+[2]) 
 AED: lastpage setting LastPage
+[leftcolumn badness]: 1000000 on 8.65503pt
+[rightcolumn badness]: 1000000 on 8.65503pt
+[leftcolumn badness]: 1000000 on 8.65503pt
+[rightcolumn badness]: 1000000 on 8.65503pt
+[leftcolumn badness]: 1000000 on 8.65503pt
+[rightcolumn badness]: 1000000 on 8.65503pt
+[leftcolumn badness]: 1000000 on 8.65503pt
+[rightcolumn badness]: 1000000 on 8.65503pt
+[leftcolumn badness]: 1000000 on 8.65503pt
+[rightcolumn badness]: 1000000 on 8.65503pt
+[leftcolumn badness]: 1000000 on 8.65503pt
+[rightcolumn badness]: 1000000 on 8.65503pt
 - LAST -
-Extra skip:0.0pt
-Left:399.08305pt/2.06494pt
-Right:390.0pt/2.06494pt
-Split: 397.54152pt
-Output:397.54152pt
-Pageshrink: 6.0pt
-Pagestretch: 5.0pt
+Extra skip:16.09998pt
+Left:62.0pt/2.16492pt
+Right:46.0pt/2.06494pt
+Split: 61.0pt
+Output:61.0pt
+Pageshrink: 0.0pt
+Pagestretch: 0.0pt
 @colht:666.9326pt
-FLUSHEND [output]: 397.54152pt
-FLUSHEND [leftcolumn badness]: 0
-FUSHEND [rightcolumn badness]: 83
-[2] (report.aux)
+FLUSHEND [output]: 61.0pt
+FLUSHEND [leftcolumn badness]: 100
+FUSHEND [rightcolumn badness]: 10000
+[3] (report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -929,17 +950,17 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 8B5498C3D475DCBD9490AC89561AE48C;93.
  ) 
 Here is how much of TeX's memory you used:
- 28359 strings out of 474486
- 517434 string characters out of 5743756
+ 28414 strings out of 474486
+ 518194 string characters out of 5743756
  1947542 words of memory out of 5000000
- 49940 multiletter control sequences out of 15000+600000
- 601933 words of font info for 235 fonts, out of 8000000 for 9000
+ 49978 multiletter control sequences out of 15000+600000
+ 603504 words of font info for 245 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,101p,1192b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (2 pages, 133074 bytes).
+ 99i,12n,101p,1192b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (3 pages, 156043 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 69146 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 99 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
+ 69658 words of extra memory for PDF output out of 74296 (max. 10000000)
 

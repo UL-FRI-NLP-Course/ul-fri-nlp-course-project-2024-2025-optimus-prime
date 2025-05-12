@@ -98,6 +98,39 @@ Evaluating RAG systems remains complex due to the nuanced nature of retrieval an
 In our project, we aim to address these issues by developing a RAG-based chatbot for academic research in automatic re-identification—the task of matching individuals across different cameras or settings, a complex problem in computer vision and machine learning. By focusing on recent research papers from arXiv, we seek to enhance the chatbot’s ability to retrieve and generate accurate responses about the latest developments in automatic re-identification
 
 
+\section*{Methods}
+\subsection*{Basline}
+Our baseline method for retrieving and responding to academic
+ queries begins with collecting relevant scientific content using the 
+ Python arxiv module. This allows us to retrieve titles, abstracts, and author
+  information for a large number of recent papers from arXiv. To enable semantic
+   matching between user queries and the retrieved documents, we employ the allenai-specter
+    model, a transformer-based embedding model specifically trained for scientific papers.
+     Both the user query and the paper abstracts are embedded into a shared vector space, 
+     and cosine similarity is computed to identify the top five most relevant papers. 
+     These selected paper summaries form the context for response generation. We use 
+     the langchain module to pass this context to our base conversational agent, which
+      is powered by the Mistral-7B-Instruct-v0.2 model, quantized to 4 bits to ensure 
+      efficient inference. This pipeline provides a lightweight
+       retrieval-augmented generation (RAG) setup tailored to scientific literature.
+
+\section*{Results}
+\subsection*{Preliminary results }
+To evaluate the effectiveness of our RAG-enhanced approach, we tested it on scientific
+ questions related to papers published after December 2023. The goal was to determine 
+ whether the system could incorporate recent research not seen during the original
+  model’s training.
+
+Across a range of prompts, results showed that while the system often failed to retrieve 
+the exact target paper with top-$k=5$, it still produced more informative and current responses by leveraging similar recent articles. Increasing $k$ to 10 improved retrieval in several cases—for example, retrieving a nearly identical sentiment analysis paper by the same authors.
+
+Refined queries also led to improved results. For a fast and robust covariance estimator, adding terms like “low contamination regime” and “near-linear sample complexity” helped surface the correct article. In contrast, generic queries often led the model to irrelevant domains, such as quantum mechanics.
+
+For topics like NP-complete problems and object detection, specificity again proved critical. While exact matches were rare, the RAG system offered responses more reflective of recent research trends than the baseline. However, it occasionally exhibited erratic behavior, such as generating its own sub-questions, which significantly increased inference time.
+
+Overall, these preliminary findings, detailed further in \texttt{testing\_the\_model.docx}, suggest that RAG enhances response relevance and currency, particularly with higher $k$ and well-formed queries. However, retrieval control and relevance filtering remain areas for future improvement.
+
+
 
 %------------------------------------------------
 
