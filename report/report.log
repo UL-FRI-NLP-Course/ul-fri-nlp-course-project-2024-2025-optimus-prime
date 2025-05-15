@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.6)  12 MAY 2025 20:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.6)  12 MAY 2025 20:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -909,22 +909,10 @@ Underfull \hbox (badness 4193) in paragraph at lines 36--41
 
 [2]) 
 AED: lastpage setting LastPage
-[leftcolumn badness]: 1000000 on 8.65503pt
-[rightcolumn badness]: 1000000 on 8.65503pt
-[leftcolumn badness]: 1000000 on 8.65503pt
-[rightcolumn badness]: 1000000 on 8.65503pt
-[leftcolumn badness]: 1000000 on 8.65503pt
-[rightcolumn badness]: 1000000 on 8.65503pt
-[leftcolumn badness]: 1000000 on 8.65503pt
-[rightcolumn badness]: 1000000 on 8.65503pt
-[leftcolumn badness]: 1000000 on 8.65503pt
-[rightcolumn badness]: 1000000 on 8.65503pt
-[leftcolumn badness]: 1000000 on 8.65503pt
-[rightcolumn badness]: 1000000 on 8.65503pt
 - LAST -
-Extra skip:16.09998pt
-Left:62.0pt/2.16492pt
-Right:46.0pt/2.06494pt
+Extra skip:3.34497pt
+Left:62.0pt/1.40991pt
+Right:58.0pt/2.06494pt
 Split: 61.0pt
 Output:61.0pt
 Pageshrink: 0.0pt
@@ -958,7 +946,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,12n,101p,1192b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (3 pages, 156043 bytes).
+Output written on report.pdf (3 pages, 156080 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  11 named destinations out of 1000 (max. 500000)
