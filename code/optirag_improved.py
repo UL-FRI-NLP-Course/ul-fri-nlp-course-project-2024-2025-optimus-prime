@@ -143,34 +143,56 @@ class OptimimusRAG:
 
 
 
-    def find_similar_papers(self, query, k=5):
+    def find_similar_papers(self, query, k: int = 5, resort_across_sources: bool = False, use_local: bool = False):
         """
-        Search both arxiv and local DB for relevant papers.
-        Return top-k most similar papers overall.
+        Return the top-k most similar papers from arXiv and optionally local DB.
+        
+        Parameters:
+            query (str): Query string.
+            k (int): Number of top papers to return from each source.
+            resort_across_sources (bool): If True, sort all results together.
+            use_local (bool): If True, include local DB results.
         """
-        # 1. Query arxiv and local DB
+
+        # --- 1. Fetch arXiv papers ----------------------------------------------------
         arxiv_papers, arxiv_summaries = self._query_arxiv(query)
-        # NOTE: add the local pappers scraped from cvf
-        local_papers = self._query_local_db(query)
-        local_summaries = [f"{paper['title']} {paper['summary']}" for paper in local_papers]
 
-        # 2. Combine
-        all_papers = arxiv_papers + local_papers
-        all_summaries = arxiv_summaries + local_summaries
-
-        # 3. Compute similarity
+        # --- 2. Encode query once -----------------------------------------------------
         embedded_query = self._encode_query([query])
-        summary_embeddings = self._encode_query(all_summaries)
-        similarities = cosine_similarity(embedded_query, summary_embeddings)[0]
 
-        for i, paper in enumerate(all_papers):
-            paper['similarity'] = similarities[i]
+        # --- 3. Compute arXiv similarities --------------------------------------------
+        arxiv_embeds = self._encode_query(arxiv_summaries)
+        arxiv_sims   = cosine_similarity(embedded_query, arxiv_embeds)[0]
+        for p, sim in zip(arxiv_papers, arxiv_sims):
+            p["similarity"] = sim
+            p["source"]     = "arxiv"
 
-        return_papers = sorted(all_papers, key=lambda x: x['similarity'], reverse=True)[:k]
-        for paper in return_papers:
-            print(paper["title"])
+        # --- 4. Process local DB if enabled -------------------------------------------
+        top_local = []
+        if use_local: # NOTE USE THIS TO SHOW THE ABILITY TO FIND OTHER METHODS NOT AVAILABLE ON ARXIV (AS AN IMPROVEMENT)
+            local_papers    = self._query_local_db(query)
+            local_summaries = [f"{p['title']} {p['summary']}" for p in local_papers]
+            local_embeds    = self._encode_query(local_summaries)
+            local_sims      = cosine_similarity(embedded_query, local_embeds)[0]
+            for p, sim in zip(local_papers, local_sims):
+                p["similarity"] = sim
+                p["source"]     = "local"
+            top_local = sorted(local_papers, key=lambda x: x["similarity"], reverse=True)[:k]
 
-        return return_papers
+        # --- 5. Select top-k arXiv papers ---------------------------------------------
+        top_arxiv = sorted(arxiv_papers, key=lambda x: x["similarity"], reverse=True)[:k]
+
+        # --- 6. Combine and optionally re-sort ----------------------------------------
+        result = top_arxiv + top_local
+        if resort_across_sources:
+            result.sort(key=lambda x: x["similarity"], reverse=True)
+
+        # --- 7. Optional console preview ----------------------------------------------
+        for p in result:
+            print(f"[{p['source']}] {p['title']}  (sim={p['similarity']:.3f})")
+
+        return result
+
 
 
         

@@ -1,34 +1,29 @@
-### QUERIES ABOUT METHODS
+### QUERIES ABOUT METHODS AVAILABLE ON ARXIV
+## proposed metrics, precision, accuracy, recall,f-1 at 1st paper correct and inside 5 correct papers
 
 Title: A Video Is Worth Three Views: Trigeminal Transformers for Video-based Person Re-identification
 Query: Can you tell me about methods that use three self-view transformers and a cross-view transformer.
 
 Title: Deeply Coupled Convolution–Transformer With Spatial–Temporal Complementary Learning for Video-Based Person Re-Identification
-Query: What is a good way to combine convolution and transformer features for person Re-ID from video?
-
-Title: Temporal Complementarity-Guided Reinforcement Learning for Image-to-Video Person Re-Identification
-Query: How can reinforcement learning be used to select complementary frames for image-to-video person re-identification?
-
-Title: Pyramid Spatial-Temporal Aggregation for Video-Based Person Re-Identification
-Query: What are effective ways to aggregate short-term and long-term temporal features for video-based person re-identification?
+Query: What is an effective framework that deeply couples CNNs and Transformers to learn complementary spatial–temporal features for video-based person re-identification, using mechanisms like complementary content attention, hierarchical temporal aggregation, gated attention, and self-distillation?
 
 Title: Multidirection and Multiscale Pyramid in Transformer for Video-Based Pedestrian Retrieval
-Query: How can transformers use multidirectional part divisions and multiscale pyramids to improve pedestrian retrieval in videos?
+Query: What Transformer-based pyramid framework applies vertical, horizontal, and patch-based divisions to build multi-direction and multi-scale feature representations for video-based pedestrian retrieval?
 
 Title: Pose-Aided Video-based Person Re-Identification via Recurrent Graph Convolutional Network
-Query: How can pose information be utilized to improve video-based person re-identification?
+Query: How can a two-branch network using a temporal pose-graph and a recurrent GCN with node- and time-attention modules be designed for pose-aided video person re-identification?
 
-Title: Video-based Person Re-identification with Spatial and Temporal Memory Networks
-Query: What methods can effectively handle spatial and temporal distractors in video-based person re-identification?
+Title: Spatial and Temporal Memory Networks (STMN) for Video-based Person Re-Identification
+Query: What architecture leverages spatial and temporal memory networks—plus a memory spread loss—to refine and aggregate frame-level features for handling distractors in video person re-identification?
 
 Title: Learning Modal-Invariant and Temporal-Memory for Video-based Visible-Infrared Person Re-Identification
-Query: Are there approaches for cross-modal video-based person re-identification between visible and infrared modalities?
+Query: How can modal-invariant projection and temporal-memory extraction be jointly applied to video-based RGB-IR person re-identification, and how does performance scale with tracklet length?
 
 Title: Cross-video Identity Correlating for Person Re-identification Pre-training
-Query: What pre-training strategies can be employed for cross-video identity correlation in person re-identification?
+Query: What pre-training framework models cross-video identity invariance via progressive multi-level denoising and employs identity-guided self-distillation for person re-identification?
 
 Title: Video Person Re-identification using Attribute-enhanced Features
-Query: How can pedestrian attributes be utilized to improve video-based person re-identification?
+Query: How can pedestrian attribute embeddings be fused with appearance and temporal features to enhance video-based person re-identification performance?
 
-
+# A FEW EXAMPLES FROM CVF, TO SHOWCASE THE INCLUSION OF THE NEW DATABASE
 

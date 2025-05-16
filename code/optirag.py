@@ -124,8 +124,13 @@ class OptimimusRAG:
         # Save similarities with papers
         for i, paper in enumerate(papers):
             paper['similarity'] = similarities[i]
+
+        result = sorted(papers, key=lambda x: x['similarity'], reverse=True)[:k]
+
+        for p in result:
+            print(f"{p['title']}  (sim={p['similarity']:.3f})")
             
-        return sorted(papers, key=lambda x: x['similarity'], reverse=True)[:k]
+        return result
         
         
     def create_context(self, papers):
