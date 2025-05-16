@@ -166,7 +166,11 @@ class OptimimusRAG:
         for i, paper in enumerate(all_papers):
             paper['similarity'] = similarities[i]
 
-        return sorted(all_papers, key=lambda x: x['similarity'], reverse=True)[:k]
+        return_papers = sorted(all_papers, key=lambda x: x['similarity'], reverse=True)[:k]
+        for paper in return_papers:
+            print(paper["title"])
+
+        return return_papers
 
 
         

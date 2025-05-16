@@ -1,0 +1,34 @@
+### QUERIES ABOUT METHODS
+
+Title: A Video Is Worth Three Views: Trigeminal Transformers for Video-based Person Re-identification
+Query: Can you tell me about methods that use three self-view transformers and a cross-view transformer.
+
+Title: Deeply Coupled Convolution–Transformer With Spatial–Temporal Complementary Learning for Video-Based Person Re-Identification
+Query: What is a good way to combine convolution and transformer features for person Re-ID from video?
+
+Title: Temporal Complementarity-Guided Reinforcement Learning for Image-to-Video Person Re-Identification
+Query: How can reinforcement learning be used to select complementary frames for image-to-video person re-identification?
+
+Title: Pyramid Spatial-Temporal Aggregation for Video-Based Person Re-Identification
+Query: What are effective ways to aggregate short-term and long-term temporal features for video-based person re-identification?
+
+Title: Multidirection and Multiscale Pyramid in Transformer for Video-Based Pedestrian Retrieval
+Query: How can transformers use multidirectional part divisions and multiscale pyramids to improve pedestrian retrieval in videos?
+
+Title: Pose-Aided Video-based Person Re-Identification via Recurrent Graph Convolutional Network
+Query: How can pose information be utilized to improve video-based person re-identification?
+
+Title: Video-based Person Re-identification with Spatial and Temporal Memory Networks
+Query: What methods can effectively handle spatial and temporal distractors in video-based person re-identification?
+
+Title: Learning Modal-Invariant and Temporal-Memory for Video-based Visible-Infrared Person Re-Identification
+Query: Are there approaches for cross-modal video-based person re-identification between visible and infrared modalities?
+
+Title: Cross-video Identity Correlating for Person Re-identification Pre-training
+Query: What pre-training strategies can be employed for cross-video identity correlation in person re-identification?
+
+Title: Video Person Re-identification using Attribute-enhanced Features
+Query: How can pedestrian attributes be utilized to improve video-based person re-identification?
+
+
+

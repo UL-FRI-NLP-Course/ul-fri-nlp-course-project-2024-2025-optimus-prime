@@ -40,7 +40,7 @@ def scrape_conference_papers(conference, years):
                 abstract = "Failed to load abstract"
             else:
                 paper_soup = BeautifulSoup(paper_page.content, "html.parser")
-                abstract_tag = paper_soup.find("div", class_="abstract")
+                abstract_tag = paper_soup.find("div", id="abstract")
                 abstract = abstract_tag.text.strip().replace("Abstract", "").strip() if abstract_tag else "No abstract found"
 
             papers.append({
@@ -56,7 +56,7 @@ def scrape_conference_papers(conference, years):
 
 def scrape_all_conferences():
     conferences = ['CVPR', 'ICCV', 'ECCV']
-    years = [2022, 2023, 2024]
+    years = [2021, 2022, 2023, 2024]
     all_papers = []
 
     for conference in conferences:
