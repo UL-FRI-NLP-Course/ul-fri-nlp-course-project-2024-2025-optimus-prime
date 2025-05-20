@@ -1,5 +1,8 @@
 ### QUERIES ABOUT METHODS AVAILABLE ON ARXIV
 ## proposed metrics, precision, accuracy, recall,f-1 at 1st paper correct and inside 5 correct papers
+## The other metric would be some subjective response evaluation score from the chatbot 
+## Definiraj dva različna queryja, enega malo bolj specifičnega enega pa malo manj
+
 
 Title: A Video Is Worth Three Views: Trigeminal Transformers for Video-based Person Re-identification
 Query: Can you tell me about methods that use three self-view transformers and a cross-view transformer.
@@ -25,5 +28,32 @@ Query: What pre-training framework models cross-video identity invariance via pr
 Title: Video Person Re-identification using Attribute-enhanced Features
 Query: How can pedestrian attribute embeddings be fused with appearance and temporal features to enhance video-based person re-identification performance?
 
+Title: Watching You: Global-guided Reciprocal Learning for Video-based Person Re-identification
+Query: How does global-guided reciprocal learning disentangle high- and low-correlation features to improve person re-identification across video frames, and what role does temporal reciprocal learning play in enhancing fine-grained cues?
+
+
+# Databse queries
+Title: WildlifeReID-10k: Wildlife re-identification dataset with 10k individual animals
+Query: Is there a publicly available large-scale benchmark for animal re-identification that spans multiple species and addresses data leakage between training and test sets using time-aware and similarity-aware splits?
+
+Title:ENTIRe-ID: An Extensive and Diverse Dataset for Person Re-Identification
+Query: What large-scale person re-identification dataset addresses domain variability and model generalization by including millions of images from multiple cameras in diverse real-world conditions?
+
+Title: IUST_PersonReId: A New Domain in Person Re-Identification Datasets
+Query: Is there a person re-identification dataset focusing on challenges in Islamic cultural contexts, emphasizing modest clothing and scenes from markets, campuses, and mosques, to address fairness and bias in ReID?
+
+
 # A FEW EXAMPLES FROM CVF, TO SHOWCASE THE INCLUSION OF THE NEW DATABASE
+Title: Unsupervised Visible-Infrared Person Re-Identification via Progressive Graph Matching and Alternate Learning
+Query: How does the progressive graph matching mechanism align visible and infrared modalities in an unsupervised manner, and how is alternate learning used to refine pseudo labels for cross-modality person re-identification?
+
+Title: Person Re-Identification Without Identification via Event Anonymization
+Query: How can person re-identification be achieved without relying on identity labels, using event-level anonymization to preserve privacy in training and inference?
+
+Title: View-decoupled Transformer for Person Re-identification under Aerial-ground Camera Network
+Query: How can a transformer framework decouple view-related and view-unrelated features to improve aerial-ground person re-identification performance across heterogeneous camera views?
+
+Title: Pyramid Spatial-Temporal Aggregation for Video-Based Person Re-Identification
+Query: How can pyramid spatial-temporal aggregation leverage short-term and long-term temporal features with spatial and temporal attention mechanisms to improve video-based person re-identification accuracy
+
 
