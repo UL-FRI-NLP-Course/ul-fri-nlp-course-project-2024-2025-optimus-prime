@@ -6,54 +6,68 @@
 
 Title: A Video Is Worth Three Views: Trigeminal Transformers for Video-based Person Re-identification
 Query: Can you tell me about methods that use three self-view transformers and a cross-view transformer.
+Broader Query: Are there transformer-based approaches that integrate multiple self-view and cross-view mechanisms for video-based person re-identification?
 
 Title: Deeply Coupled Convolution–Transformer With Spatial–Temporal Complementary Learning for Video-Based Person Re-Identification
 Query: What is an effective framework that deeply couples CNNs and Transformers to learn complementary spatial–temporal features for video-based person re-identification, using mechanisms like complementary content attention, hierarchical temporal aggregation, gated attention, and self-distillation?
+Broader Query: How can CNNs and Transformers be integrated to enhance spatial–temporal feature learning in video-based person re-identification?
 
 Title: Multidirection and Multiscale Pyramid in Transformer for Video-Based Pedestrian Retrieval
 Query: What Transformer-based pyramid framework applies vertical, horizontal, and patch-based divisions to build multi-direction and multi-scale feature representations for video-based pedestrian retrieval?
+Broader Query: Are there Transformer architectures that utilize multi-directional and multi-scale feature representations for pedestrian retrieval in videos?
 
 Title: Pose-Aided Video-based Person Re-Identification via Recurrent Graph Convolutional Network
 Query: How can a two-branch network using a temporal pose-graph and a recurrent GCN with node- and time-attention modules be designed for pose-aided video person re-identification?
+Broader Query: What approaches leverage pose information and graph convolutional networks for enhancing video-based person re-identification?
 
 Title: Spatial and Temporal Memory Networks (STMN) for Video-based Person Re-Identification
 Query: What architecture leverages spatial and temporal memory networks—plus a memory spread loss—to refine and aggregate frame-level features for handling distractors in video person re-identification?
+Broader Query: How do memory networks contribute to refining spatial and temporal features in video-based person re-identification?
 
 Title: Learning Modal-Invariant and Temporal-Memory for Video-based Visible-Infrared Person Re-Identification
 Query: How can modal-invariant projection and temporal-memory extraction be jointly applied to video-based RGB-IR person re-identification, and how does performance scale with tracklet length?
+Broader Query: What methods address modality invariance and temporal memory in RGB-IR video-based person re-identification?
 
 Title: Cross-video Identity Correlating for Person Re-identification Pre-training
 Query: What pre-training framework models cross-video identity invariance via progressive multi-level denoising and employs identity-guided self-distillation for person re-identification?
+Broader Query: Are there pre-training strategies that enhance identity invariance across videos for person re-identification tasks?
 
 Title: Video Person Re-identification using Attribute-enhanced Features
 Query: How can pedestrian attribute embeddings be fused with appearance and temporal features to enhance video-based person re-identification performance?
+Broader Query: What role do attribute embeddings play in improving video-based person re-identification systems?
 
 Title: Watching You: Global-guided Reciprocal Learning for Video-based Person Re-identification
 Query: How does global-guided reciprocal learning disentangle high- and low-correlation features to improve person re-identification across video frames, and what role does temporal reciprocal learning play in enhancing fine-grained cues?
-
+Broader Query: What techniques utilize global guidance and reciprocal learning to enhance feature discrimination in video-based person re-identification?
 
 # Databse queries
 Title: WildlifeReID-10k: Wildlife re-identification dataset with 10k individual animals
 Query: Is there a publicly available large-scale benchmark for animal re-identification that spans multiple species and addresses data leakage between training and test sets using time-aware and similarity-aware splits?
+Broader Query: Are there comprehensive datasets available for multi-species animal re-identification that consider temporal and similarity-based data splits?
 
 Title:ENTIRe-ID: An Extensive and Diverse Dataset for Person Re-Identification
 Query: What large-scale person re-identification dataset addresses domain variability and model generalization by including millions of images from multiple cameras in diverse real-world conditions?
+Broader Query: Are there extensive person re-identification datasets that capture diverse environmental conditions and camera perspectives to aid in model generalization?
 
 Title: IUST_PersonReId: A New Domain in Person Re-Identification Datasets
 Query: Is there a person re-identification dataset focusing on challenges in Islamic cultural contexts, emphasizing modest clothing and scenes from markets, campuses, and mosques, to address fairness and bias in ReID?
+Broader Query: Are there datasets tailored to culturally specific contexts, such as Islamic regions, to improve fairness in person re-identification models?
 
 
 # A FEW EXAMPLES FROM CVF, TO SHOWCASE THE INCLUSION OF THE NEW DATABASE
 Title: Unsupervised Visible-Infrared Person Re-Identification via Progressive Graph Matching and Alternate Learning
 Query: How does the progressive graph matching mechanism align visible and infrared modalities in an unsupervised manner, and how is alternate learning used to refine pseudo labels for cross-modality person re-identification?
+Broader Query: What unsupervised methods exist for aligning visible and infrared data in person re-identification tasks?
 
 Title: Person Re-Identification Without Identification via Event Anonymization
 Query: How can person re-identification be achieved without relying on identity labels, using event-level anonymization to preserve privacy in training and inference?
+Broader Query: Are there privacy-preserving approaches to person re-identification that do not require explicit identity annotations?
 
 Title: View-decoupled Transformer for Person Re-identification under Aerial-ground Camera Network
 Query: How can a transformer framework decouple view-related and view-unrelated features to improve aerial-ground person re-identification performance across heterogeneous camera views?
+Broader Query: What strategies are employed to handle view discrepancies in aerial-ground person re-identification scenarios?
 
 Title: Pyramid Spatial-Temporal Aggregation for Video-Based Person Re-Identification
 Query: How can pyramid spatial-temporal aggregation leverage short-term and long-term temporal features with spatial and temporal attention mechanisms to improve video-based person re-identification accuracy
-
+Broader Query: What methods utilize hierarchical spatial-temporal aggregation to enhance accuracy in video-based person re-identification?
 

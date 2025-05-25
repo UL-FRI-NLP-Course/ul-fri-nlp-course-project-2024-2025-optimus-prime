@@ -61,7 +61,7 @@ class OptimimusRAG:
         # Model used for chatting
         self.llm = HuggingFacePipeline(pipeline=text_generator) 
         
-        self.embedding_model = SentenceTransformer('allenai-specter') # It can be used to map the titles & abstracts of scientific publications to a vector space such that similar papers are close.
+        self.embedding_model = SentenceTransformer('allenai-specter') 
         
         self.arxiv_client = arxiv.Client()
         self.chain = self._get_prompt_chain()
@@ -134,7 +134,7 @@ class OptimimusRAG:
         for row in rows:
             papers.append({
                 "title": row[0],
-                "summary": row[1],  # abstract renamed for compatibility
+                "summary": row[1], 
                 "url": row[2],
                 "conference": row[3],
                 "year": row[4],
@@ -171,7 +171,9 @@ class OptimimusRAG:
         top_local = []
         if use_local: # NOTE USE THIS TO SHOW THE ABILITY TO FIND OTHER METHODS NOT AVAILABLE ON ARXIV (AS AN IMPROVEMENT)
             local_papers    = self._query_local_db(query)
-            local_summaries = [f"{p['title']} {p['summary']}" for p in local_papers]
+            local_summaries = local_summaries = [
+                    f"{p['title']} {p['authors']} {p['summary']}" for p in local_papers
+                ]
             local_embeds    = self._encode_query(local_summaries)
             local_sims      = cosine_similarity(embedded_query, local_embeds)[0]
             for p, sim in zip(local_papers, local_sims):
@@ -187,7 +189,6 @@ class OptimimusRAG:
         if resort_across_sources:
             result.sort(key=lambda x: x["similarity"], reverse=True)
 
-        # --- 7. Optional console preview ----------------------------------------------
         for p in result:
             print(f"[{p['source']}] {p['title']}  (sim={p['similarity']:.3f})")
 
@@ -258,7 +259,7 @@ if __name__ == "__main__":
     i = 0
     while True:
     
-        query = input("Sup king\n\n" if i == 0 else "What else do you want to know\n\n") # "What is the best way to train a neural network?"
+        query = input("Sup king\n\n" if i == 0 else "What else do you want to know\n\n") 
         
     
         papers = gpt.find_similar_papers(chat[-1]["query"] + query, k=5)
