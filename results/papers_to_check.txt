@@ -1,7 +1,7 @@
 ### QUERIES ABOUT METHODS AVAILABLE ON ARXIV
-## proposed metrics, precision, accuracy, recall,f-1 at 1st paper correct and inside 5 correct papers
-## The other metric would be some subjective response evaluation score from the chatbot 
-## Definiraj dva različna queryja, enega malo bolj specifičnega enega pa malo manj
+## The other metric would be some subjective response evaluation score from the chatbot - maybe not necessary
+## Definiraj dva različna queryja, enega malo bolj specifičnega enega pa malo manj - DONE
+# maybe we could make some type of CMC curve for ranking at which position it found the article - one curve for baseline - one for improved, maybe also one for all queries, one for specific, one for less specific?
 
 
 Title: A Video Is Worth Three Views: Trigeminal Transformers for Video-based Person Re-identification
@@ -20,9 +20,9 @@ Title: Pose-Aided Video-based Person Re-Identification via Recurrent Graph Convo
 Query: How can a two-branch network using a temporal pose-graph and a recurrent GCN with node- and time-attention modules be designed for pose-aided video person re-identification?
 Broader Query: What approaches leverage pose information and graph convolutional networks for enhancing video-based person re-identification?
 
-Title: Spatial and Temporal Memory Networks (STMN) for Video-based Person Re-Identification
-Query: What architecture leverages spatial and temporal memory networks—plus a memory spread loss—to refine and aggregate frame-level features for handling distractors in video person re-identification?
-Broader Query: How do memory networks contribute to refining spatial and temporal features in video-based person re-identification?
+Title: Video-based Person Re-identification with Spatial and Temporal Memory Networks
+Query: What are the latest methods in video-based person re-identification that use spatial and temporal memory networks to handle distractors and refine frame-level and sequence-level representations?
+Broader Query: How are memory networks used in video-based person re-identification to improve performance against spatial and temporal challenges?
 
 Title: Learning Modal-Invariant and Temporal-Memory for Video-based Visible-Infrared Person Re-Identification
 Query: How can modal-invariant projection and temporal-memory extraction be jointly applied to video-based RGB-IR person re-identification, and how does performance scale with tracklet length?
@@ -31,10 +31,6 @@ Broader Query: What methods address modality invariance and temporal memory in R
 Title: Cross-video Identity Correlating for Person Re-identification Pre-training
 Query: What pre-training framework models cross-video identity invariance via progressive multi-level denoising and employs identity-guided self-distillation for person re-identification?
 Broader Query: Are there pre-training strategies that enhance identity invariance across videos for person re-identification tasks?
-
-Title: Video Person Re-identification using Attribute-enhanced Features
-Query: How can pedestrian attribute embeddings be fused with appearance and temporal features to enhance video-based person re-identification performance?
-Broader Query: What role do attribute embeddings play in improving video-based person re-identification systems?
 
 Title: Watching You: Global-guided Reciprocal Learning for Video-based Person Re-identification
 Query: How does global-guided reciprocal learning disentangle high- and low-correlation features to improve person re-identification across video frames, and what role does temporal reciprocal learning play in enhancing fine-grained cues?

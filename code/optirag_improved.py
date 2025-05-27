@@ -21,7 +21,6 @@ class OptimimusRAG:
         self.db_path = "cvf_papers.db" 
         
     def initialize_model(self):
-        
         # Load a chat-capable model
         self.tokenizer = AutoTokenizer.from_pretrained(
             pretrained_model_name_or_path=self.llm_model,
@@ -80,6 +79,46 @@ class OptimimusRAG:
         """
         domain_keywords = ["person re-identification", "video", "person re-id"]
         return query + " " + " ".join(domain_keywords)
+    
+
+    # NOTE: add rewriting of the query berfore searching and before matching 
+    def rewrite_query(self, query: str, mode: str = "search") -> str:
+        if mode == "search":
+            instruction = (
+                "Rewrite the following query into a concise academic-style search query for arXiv. "
+                "Use only key technical terms, no full sentences, no instructions, no labels. "
+                "Return a single-line keyword-style query only."
+                )
+        elif mode == "matching":
+            instruction = (
+                "Rewrite the following query for use in semantic similarity matching with academic abstracts. "
+                "Return only a single line with technical keywords or short phrases. "
+                "Avoid explanations, formatting, or full sentences."
+            )
+        else:
+            raise ValueError("mode must be 'search' or 'matching'")
+
+        prompt = f"""{instruction}
+
+    Original query:
+    {query}
+
+    Rewritten query:"""
+
+        rewritten = self.llm(prompt).strip()
+
+        # Extract content after "Rewritten query:"
+        if "Rewritten query:" in rewritten:
+            return rewritten.split("Rewritten query:", 1)[-1].strip()
+
+        # Otherwise, fallback to first meaningful line
+        for line in rewritten.splitlines():
+            line = line.strip()
+            if line and not line.lower().startswith("rewritten query"):
+                return line
+
+        return rewritten.strip()
+
 
     
 
@@ -88,13 +127,20 @@ class OptimimusRAG:
         Query the arxiv API for papers related to the query.
         Returns a list of papers and their summaries (used for similarity search).
         """
+        # NOTE rewrite the query for searching 
+        query = self.rewrite_query(query, mode="search")
+
+        print(query)
+
         # NOTE enrich the query
         query = self._enrich_query(query)
+
+        print(query)
 
         search = arxiv.Search(
             # NOTE: added this to focus more on computer vision
             query=f"cat:cs.CV AND ({query})",
-            max_results=30,
+            max_results=100,
             sort_by=arxiv.SortCriterion.Relevance,
             sort_order=arxiv.SortOrder.Descending,
         )
@@ -143,7 +189,9 @@ class OptimimusRAG:
 
 
 
-    def find_similar_papers(self, query, k: int = 5, resort_across_sources: bool = False, use_local: bool = False):
+    def find_similar_papers(self, query, k: int = 5, 
+                            resort_across_sources: bool = False,
+                             use_local: bool = False):
         """
         Return the top-k most similar papers from arXiv and optionally local DB.
         
@@ -156,6 +204,13 @@ class OptimimusRAG:
 
         # --- 1. Fetch arXiv papers ----------------------------------------------------
         arxiv_papers, arxiv_summaries = self._query_arxiv(query)
+
+        #print(arxiv_papers)
+        print(query)
+        # NOTE rewrite the query for matching
+        query = self.rewrite_query(query, mode="matching")
+        print(query)
+
 
         # --- 2. Encode query once -----------------------------------------------------
         embedded_query = self._encode_query([query])
@@ -171,9 +226,9 @@ class OptimimusRAG:
         top_local = []
         if use_local: # NOTE USE THIS TO SHOW THE ABILITY TO FIND OTHER METHODS NOT AVAILABLE ON ARXIV (AS AN IMPROVEMENT)
             local_papers    = self._query_local_db(query)
-            local_summaries = local_summaries = [
-                    f"{p['title']} {p['authors']} {p['summary']}" for p in local_papers
-                ]
+            local_summaries = [
+                f"{p['title']} {p['summary']}" for p in local_papers
+            ]
             local_embeds    = self._encode_query(local_summaries)
             local_sims      = cosine_similarity(embedded_query, local_embeds)[0]
             for p, sim in zip(local_papers, local_sims):
@@ -189,15 +244,13 @@ class OptimimusRAG:
         if resort_across_sources:
             result.sort(key=lambda x: x["similarity"], reverse=True)
 
-        for p in result:
-            print(f"[{p['source']}] {p['title']}  (sim={p['similarity']:.3f})")
+        for i,p in enumerate(result):
+            print(f"[{p['source']}] {p['title']}  rank = {i} (sim={p['similarity']:.3f})")
 
         return result
 
 
 
-        
-        
     def create_context(self, papers):
         context = "\n\n".join(
             f"Title: {pap['title']}\nSummary: {pap['summary']}" for pap in papers
@@ -205,7 +258,7 @@ class OptimimusRAG:
         return context
     
     def _get_prompt_chain(self):
-        # NOTE CHANGE THIS TO THE MORE SPECIFIC ONE
+        # NOTE CHANGED THIS TO THE MORE SPECIFIC ONE
         PROMPT_TEMPLATE = """
        You are an expert AI assistant specialized in person re-identification (Re-ID
        ) from video data. Your task is to help researchers understand and apply 
@@ -257,23 +310,27 @@ if __name__ == "__main__":
     gpt.initialize_model()
     chat = [{"query": "", "response": ""}]
     i = 0
+
+    provide_response = False
+
     while True:
     
         query = input("Sup king\n\n" if i == 0 else "What else do you want to know\n\n") 
         
     
-        papers = gpt.find_similar_papers(chat[-1]["query"] + query, k=5)
+        papers = gpt.find_similar_papers(chat[-1]["query"] + query, k=30)
         context = gpt.create_context(papers)
 
-        rag_response = gpt.generate_response(context, query)     
-        normal_response = gpt.generate_response("", query)     
-        chat.append({"query": query, "response": rag_response})
+        if provide_response:
+            rag_response = gpt.generate_response(context, query)     
+            normal_response = gpt.generate_response("", query)     
+            chat.append({"query": query, "response": rag_response})
 
-        print("Rag response:")
-        print("="*100)
-        print(rag_response)
-        print("Normal response:")
-        print("="*100)
-        print(normal_response)
-        i += 1
-    
+            print("Rag response:")
+            print("="*100)
+            print(rag_response)
+            print("Normal response:")
+            print("="*100)
+            print(normal_response)
+            i += 1
+        

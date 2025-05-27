@@ -79,7 +79,7 @@ class OptimimusRAG:
         """
         search = arxiv.Search(
             query=query,
-            max_results=30,
+            max_results=100,
             sort_by=arxiv.SortCriterion.Relevance,
             sort_order=arxiv.SortOrder.Descending,
         )
@@ -127,8 +127,8 @@ class OptimimusRAG:
 
         result = sorted(papers, key=lambda x: x['similarity'], reverse=True)[:k]
 
-        for p in result:
-            print(f"{p['title']}  (sim={p['similarity']:.3f})")
+        for i, p in enumerate(result):
+            print(f"{p['title']} rank={i}  (sim={p['similarity']:.3f})")
             
         return result
         
@@ -185,23 +185,27 @@ if __name__ == "__main__":
     gpt.initialize_model()
     chat = [{"query": "", "response": ""}]
     i = 0
+
+    provide_response = False
+
     while True:
     
         query = input("Sup king\n\n" if i == 0 else "What else do you want to know\n\n") # "What is the best way to train a neural network?"
         
     
-        papers = gpt.find_similar_papers(chat[-1]["query"] + query, k=5)
+        papers = gpt.find_similar_papers(chat[-1]["query"] + query, k=30)
         context = gpt.create_context(papers)
 
-        rag_response = gpt.generate_response(context, query)     
-        normal_response = gpt.generate_response("", query)     
-        chat.append({"query": query, "response": rag_response})
+        if provide_response:
+            rag_response = gpt.generate_response(context, query)     
+            normal_response = gpt.generate_response("", query)     
+            chat.append({"query": query, "response": rag_response})
 
-        print("Rag response:")
-        print("="*100)
-        print(rag_response)
-        print("Normal response:")
-        print("="*100)
-        print(normal_response)
-        i += 1
+            print("Rag response:")
+            print("="*100)
+            print(rag_response)
+            print("Normal response:")
+            print("="*100)
+            print(normal_response)
+            i += 1
     
