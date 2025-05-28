@@ -47,7 +47,7 @@
 \affiliation{\textit{Advisors: Aleš Žagar}}
 
 % Keywords
-\Keywords{Keyword1, Keyword2, Keyword3 ...}
+\Keywords{Retrieval augmented generation, research assistance, re-identification}
 \newcommand{\keywordname}{Keywords}
 
 
@@ -56,7 +56,7 @@
 %----------------------------------------------------------------------------------------
 
 \Abstract{
-The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here. The abstract goes here.
+optimus
 }
 
 %----------------------------------------------------------------------------------------
@@ -77,7 +77,20 @@ The abstract goes here. The abstract goes here. The abstract goes here. The abst
 %----------------------------------------------------------------------------------------
 
 \section*{Introduction}
-We are developing a conversational agent with Retrieval-Augmented Generation (RAG) to support academic research, focusing on the field of automatic re-identification. The system will leverage a pre-trained chatbot developed in [insert year], enhanced with a RAG mechanism to retrieve and incorporate the latest research papers from arXiv. To keep the model manageable and focused, we will limit the scope of retrieved papers to a specific recent time frame (e.g., one month). The retrieved papers will be processed and integrated into the chatbot's responses, allowing the agent to provide up-to-date and accurate answers about re-identification methods developed after the chatbot’s original training. To evaluate our approach an option is to manually check if the answers were relevant for the chosen scientific area and if the papers used for the queries were relevant for the specific query. Another option would be to compare the answers of a chat-bot that was trained with more recent data. Possible pre-trained chatbots that we could use include Mistral 7B or Zephyr. 
+We are developing a conversational agent with Retrieval-Augmented 
+Generation (RAG) to support academic research, focusing on the field of automatic
+ re-identification. The system will leverage a pre-trained chatbot developed in
+  [insert year], enhanced with a RAG mechanism to retrieve and incorporate the 
+  latest research papers from arXiv. To keep the model manageable and focused, 
+  we will limit the scope of retrieved papers to a specific recent time frame 
+  (e.g., one month). The retrieved papers will be processed and integrated into 
+  the chatbot's responses, allowing the agent to provide up-to-date and accurate 
+  answers about re-identification methods developed after the chatbot’s original 
+  training. To evaluate our approach an option is to manually check if the answers
+   were relevant for the chosen scientific area and if the papers used for the
+    queries were relevant for the specific query. Another option would be to compare
+     the answers of a chat-bot that was trained with more recent data. Possible 
+     pre-trained chatbots that we could use include Mistral 7B or Zephyr. 
 
 
 
@@ -99,20 +112,51 @@ In our project, we aim to address these issues by developing a RAG-based chatbot
 
 
 \section*{Methods}
-\subsection*{Basline}
-Our baseline method for retrieving and responding to academic
- queries begins with collecting relevant scientific content using the 
- Python arxiv module. This allows us to retrieve titles, abstracts, and author
-  information for a large number of recent papers from arXiv. To enable semantic
-   matching between user queries and the retrieved documents, we employ the allenai-specter
-    model, a transformer-based embedding model specifically trained for scientific papers.
-     Both the user query and the paper abstracts are embedded into a shared vector space, 
-     and cosine similarity is computed to identify the top five most relevant papers. 
-     These selected paper summaries form the context for response generation. We use 
-     the langchain module to pass this context to our base conversational agent, which
-      is powered by the Mistral-7B-Instruct-v0.2 model, quantized to 4 bits to ensure 
-      efficient inference. This pipeline provides a lightweight
-       retrieval-augmented generation (RAG) setup tailored to scientific literature.
+\subsection*{Baseline}
+\subsubsection*{Paper Retrieval from arXiv}
+We begin by retrieving candidate papers using the official arXiv API. For each paper, we extract its title, abstract, and metadata. To enable semantic similarity-based filtering, both the user query and the abstracts are embedded using the \texttt{allenai-specter} SentenceTransformer model, which is trained to map scientific documents into a dense vector space. We compute cosine similarity between the query embedding and each abstract embedding, and select the top-$k$ most relevant papers ($k=30$ by default).
+
+\subsubsection*{Context Construction}
+The titles and abstracts of the top-ranked papers are concatenated into a single text block to serve as external context. This context is inserted into the prompt presented to the language model. No chunking, reranking, or content selection is applied at this stage beyond the similarity-based retrieval.
+
+\subsubsection*{Language Model Inference}
+We use \texttt{Mistral-7B-Instruct-v0.2} as the language model backend. To enable efficient inference on commodity hardware, the model is loaded using 4-bit quantization with \texttt{bitsandbytes}, applying NF4 quantization and bfloat16 compute precision. The model is wrapped with Hugging Face's text-generation pipeline and integrated with LangChain to enable prompt-based question answering. Prompt templates include both the constructed context and the current user query. For comparison, we also evaluate answers generated without any retrieved context.
+
+\subsubsection*{System Behavior}
+The system retains a basic conversational memory by concatenating the most recent user query with the current one. This helps preserve short-term context without implementing a full dialogue memory or rewriting mechanism. No fine-tuning is performed, and no re-ranking, filtering, or external knowledge base is used. This baseline is intended to evaluate performance with minimal architectural complexity.
+
+
+  \subsection*{Improved model}
+
+Several enhancements were implemented over the baseline RAG system to 
+improve relevance and accuracy, particularly for person re-identification
+ from video:
+
+\begin{itemize}
+    \item \textbf{Two-Stage Query Rewriting}: Queries are rewritten separately for retrieval (search) and semantic matching, improving both recall and ranking quality.
+    
+    \item \textbf{Domain-Specific Augmentation}: Rewritten queries are enriched with terms like \texttt{"person re-identification"} and restricted to the \texttt{cs.CV} category to focus results on relevant literature.
+
+    \item \textbf{Local Database Integration}: Retrieval includes a local CVF paper database, expanding coverage beyond arXiv.
+
+    \item \textbf{Unified Re-Ranking}: All retrieved papers are encoded with \texttt{allenai-specter} and re-ranked using cosine similarity against the rewritten match query.
+
+    \item \textbf{Task-Specific Prompting}: The LLM prompt is tailored for the Re-ID task, improving the domain alignment of generated responses.
+\end{itemize}
+
+Figure~\ref{fig:retrieval_pipeline} illustrates the improved retrieval pipeline, highlighting the two-stage query rewriting, local CVF integration, and re-ranking stages.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{fig/tmp.png}
+    \caption{Tmp flowchart}
+    \label{fig:retrieval_pipeline}
+\end{figure}
+
+
+
+
 
 \section*{Results}
 \subsection*{Preliminary results }
@@ -133,6 +177,9 @@ Overall, these preliminary findings, detailed further in \texttt{results/testing
   and well-formed queries. However, retrieval control and relevance filtering remain
   areas for future improvement. Note that these results were collected using the baseline method. 
   
+\subsection*{Final Results}
+Since we mostly focused on improving the retrieval side of our model, here we use a 
+metric similar to the CMC - a metric often used in computer vision recognition tasks. 
 
 
 
@@ -144,13 +191,6 @@ Overall, these preliminary findings, detailed further in \texttt{results/testing
 \section*{Discussion}
 
 Use the Discussion section to objectively evaluate your work, do not just put praise on everything you did, be critical and exposes flaws and weaknesses of your solution. You can also explain what you would do differently if you would be able to start again and what upgrades could be done on the project in the future.
-
-
-%------------------------------------------------
-
-\section*{Acknowledgments}
-
-Here you can thank other persons (advisors, colleagues ...) that contributed to the successful completion of your project.
 
 
 %----------------------------------------------------------------------------------------

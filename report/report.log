@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.6)  26 MAY 2025 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.6)  28 MAY 2025 21:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -866,14 +866,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
-
-Underfull \vbox (badness 1024) has occurred while \output is active []
-
  [1{C:/Users/marko/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
  <./logo.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 131.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 117.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
@@ -881,8 +878,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 136.
+ (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (45.78838pt too wide) in paragraph at lines 138--139
+\OT1/ptm/m/n/10 (-20) are en-riched with terms like \OT1/pcr/m/n/10 "person re-identification"
+ []
 
-Overfull \hbox (5.43968pt too wide) in paragraph at lines 131--135
+<fig/tmp.png, id=39, 1027.84pt x 1541.76pt>
+File: fig/tmp.png Graphic file (type png)
+<use fig/tmp.png>
+Package pdftex.def Info: fig/tmp.png  used on input line 152.
+(pdftex.def)             Requested size: 242.41745pt x 363.60754pt.
+[2 <./fig/tmp.png (PNG copy)>]
+Overfull \hbox (5.43968pt too wide) in paragraph at lines 175--179
 \OT1/pcr/m/n/10 results/testing[]the[]model.docx\OT1/ptm/m/n/10 (-20) , sug-gest that RAG
  []
 
@@ -912,20 +922,20 @@ Underfull \hbox (badness 4193) in paragraph at lines 36--41
 \OT1/ptm/m/n/10 (+20) Bench-mark-ing large lan-guage mod-els in retrieval-
  []
 
-[2]) 
+) 
 AED: lastpage setting LastPage
 - LAST -
 Extra skip:0.0pt
-Left:86.0pt/2.5pt
-Right:86.0pt/2.06494pt
-Split: 87.0pt
-Output:87.0pt
-Pageshrink: 0.0pt
-Pagestretch: 0.0pt
+Left:497.74991pt/2.16492pt
+Right:512.66533pt/2.06494pt
+Split: 506.20761pt
+Output:506.20761pt
+Pageshrink: 9.0pt
+Pagestretch: 11.0pt
 @colht:666.9326pt
-FLUSHEND [output]: 87.0pt
-FLUSHEND [leftcolumn badness]: 12
-FUSHEND [rightcolumn badness]: 12
+FLUSHEND [output]: 506.20761pt
+FLUSHEND [leftcolumn badness]: 14
+FUSHEND [rightcolumn badness]: 52
 [3] (report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -940,20 +950,20 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 8B5498C3D475DCBD9490AC89561AE48C;93.
+(rerunfilecheck)             Checksum: BC4A82FC9C41F6D92576CEDE4808FC81;100.
  ) 
 Here is how much of TeX's memory you used:
- 28417 strings out of 474486
- 518221 string characters out of 5743756
- 1946542 words of memory out of 5000000
- 49978 multiletter control sequences out of 15000+600000
- 603623 words of font info for 247 fonts, out of 8000000 for 9000
+ 28485 strings out of 474486
+ 519285 string characters out of 5743756
+ 1951542 words of memory out of 5000000
+ 50021 multiletter control sequences out of 15000+600000
+ 605718 words of font info for 261 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,101p,1192b,617s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,101p,1087b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (3 pages, 157017 bytes).
+Output written on report.pdf (3 pages, 1890514 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 69658 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 102 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
+ 73759 words of extra memory for PDF output out of 74296 (max. 10000000)
 
