@@ -163,8 +163,8 @@ pipeline, including the two-stage query rewriting, integration of a
 
 
 
-\section*{Results}
-\subsection*{Preliminary results }
+
+\section*{Preliminary results }
 To evaluate the effectiveness of our RAG-enhanced approach, we tested it on scientific
  questions related to papers published after December 2023. The goal was to determine 
  whether the system could incorporate recent research not seen during the original
@@ -182,9 +182,105 @@ Overall, these preliminary findings, detailed further in \textit{results/testing
   and well-formed queries. However, retrieval control and relevance filtering remain
   areas for future improvement. Note that these results were collected using the baseline method. 
   
-\subsection*{Final Results}
-Since we mostly focused on improving the retrieval side of our model, here we use a 
-metric similar to the CMC - a metric often used in computer vision recognition tasks. 
+\section*{Results}
+
+\subsection*{Evaluation description}
+
+As part of the evaluation protocol, we simulate the retrieval task by selecting a specific target paper
+and generating two types of queries per paper:
+
+\begin{itemize}
+    \item \textit{Specific} query: designed to closely reflect the paper’s title or main content.
+    \item \textit{Broad} query: incorporates more general or related terms to capture a wider set of relevant documents.
+\end{itemize}
+
+This setup allows us to assess the retrieval system’s ability to rank truly relevant papers near the top of the search results,
+which simulates real-world scenarios where researchers look for both precise and comprehensive literature coverage.
+
+To ensure a fair comparison with the baseline system, we did not include our local CVF paper database during evaluation,
+as the baseline does not have access to it.
+
+\subsubsection*{Metrics for retrieval evaluation}
+
+Since our primary focus was on improving retrieval performance, 
+we evaluated the system using metrics inspired by common recognition and retrieval tasks.
+
+The Cumulative Matching Characteristic (CMC)-like metric measures the probability 
+that the correct match appears within the top-$k$ retrieved results. 
+
+It is computed by checking, for each query, whether the correct item is found at rank 1, 
+rank 2, and so on up to rank $k$, then averaging these results across all queries.
+
+This metric is particularly useful here because it directly reflects 
+the likelihood that a user or system will find a correct identity 
+within a small set of top candidates, which is crucial for efficient person re-identification 
+in large video databases.
+
+The mean Average Precision (mAP)-like metric evaluates the retrieval quality 
+across all relevant items for each query by calculating the average precision 
+at the ranks where relevant results appear, then averaging this precision across all queries.
+
+This captures both precision and recall over the entire ranked list, 
+offering a more comprehensive measure of retrieval effectiveness.
+
+Together, these metrics give complementary views of system performance:
+
+\begin{itemize}
+    \item \textbf{CMC} focuses on the position of the first correct match, indicating practical usability by measuring how quickly a correct result appears in the ranked list.
+    \item \textbf{mAP} reflects overall retrieval accuracy and ranking quality by considering all relevant results throughout the list, capturing both precision and recall.
+\end{itemize}
+
+This combination makes them well-suited to assess person re-identification and related retrieval tasks.
+
+\subsection*{Evaluation Results}
+To estimate uncertainty in our evaluation, we used non-parametric bootstrapping over the query set with 1000 resamples. 
+For each resample, we computed both CMC curves and mean Average Precision (mAP). 
+The reported values in Table~1 correspond to the mean and standard deviation across these samples.
+
+For the CMC plots (Figure~\ref{fig:cmc}), we show the mean curve along with confidence intervals.
+These intervals represent the $[15^\text{th}, 85^\text{th}]$ percentiles (i.e., a 70\% confidence interval)
+computed at each rank position based on bootstrapped CMC values.
+
+As seen in Table~1 and Figure~\ref{fig:cmc}, our current method underperforms the baseline across all metrics,
+with the largest gap observed in the specific query setting.
+This indicates that the current approach may not be capturing the essential characteristics needed.
+
+Improving performance may require exploring different models or techniques that better represent
+the relationship between queries and target papers, particularly in more precise retrieval scenarios.
+
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{fig/cmc.png}
+    \caption{}
+    \label{fig:cmc}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Retrieval performance for specific and broad queries. Best results in bold.}
+\begin{tabular}{l|c|c|c}
+\toprule
+\multicolumn{4}{c}{\textbf{Specific Queries}} \\
+\midrule
+\textbf{Method} & \textbf{Rank-1} & \textbf{Rank-5} & \textbf{mAP} \\
+\midrule
+Current  & 0.254 ± 0.097 & 0.450 ± 0.112 & 0.365 ± 0.093 \\
+Baseline & \textbf{0.600 ± 0.110} & \textbf{0.850 ± 0.081} & \textbf{0.683 ± 0.091} \\
+\midrule[0.8pt]
+\multicolumn{4}{c}{\textbf{Broad Queries}} \\
+\midrule
+\textbf{Method} & \textbf{Rank-1} & \textbf{Rank-5} & \textbf{mAP} \\
+\midrule
+Current  & 0.150 ± 0.082 & 0.301 ± 0.103 & 0.231 ± 0.083 \\
+Baseline & \textbf{0.199 ± 0.090} & \textbf{0.698 ± 0.103} & \textbf{0.369 ± 0.078} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
 
 
 

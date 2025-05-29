@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex report"] 1748536229.50797 "report.aux" "report.bbl" "report" 1748537020.05586 0
+["bibtex report"] 1748546405.07957 "report.aux" "report.bbl" "report" 1748546858.79078 0
   "./report.bib" 1742578920 3303 cac69eecb8d3ea7ad7443ad1df7d0a68 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291864736 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "report.aux" 1748537019 1238 fd923c99ac70595ec8461cc995602641 "pdflatex"
+  "report.aux" 1748546858 1611 b676a8fc19d539054792e74f7410f55f "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1748537018.28762 "c:/Users/marko/Desktop/NLP/ul-fri-nlp-course-project-2024-2025-optimus-prime/report/report.tex" "report.pdf" "report" 1748537020.05648 0
+["pdflatex"] 1748546856.90161 "c:/Users/marko/Desktop/NLP/ul-fri-nlp-course-project-2024-2025-optimus-prime/report/report.tex" "report.pdf" "report" 1748546858.79133 0
   "C:/Users/marko/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1744726569 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/marko/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1741285665 24225045 9df87bb9afcf68668f63d57d7a3d7d4c ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -20,6 +20,7 @@
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/symbol/psyr.tfm" 1136768654 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/psyro.tfm" 1136768654 1544 23a042a74981a3e4b6ce2e350e390409 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768654 2172 fd0c924230362ff848a33632ed45dc23 ""
+  "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb8c.tfm" 1136768654 1340 d2f6275bc4fa3f07e3bc50aae2c71eab ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768654 4524 6bce29db5bc272ba5f332261583fee9c ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmr7t.tfm" 1136768654 2124 2601a75482e9426d33db523edf23570a ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmr8c.tfm" 1136768654 1352 fa28a7e6d323c65ce7d13d5342ff6be2 ""
@@ -33,6 +34,7 @@
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1233951854 908 2921f8a10601f252058503cc6570e581 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmss17.tfm" 1136765053 1320 ed93d62c5f2c16343826001f03341dbc ""
+  "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb" 1247596667 24416 36515493f76659302880e2604105b074 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
@@ -46,6 +48,7 @@
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/helvetic/phvr7t.vf" 1136768654 1372 dc841a9f00a1a11b1443367ae6c5588e ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/helvetic/phvro7t.vf" 1136768654 1372 9948cedecdb0445a3b5cf1b8a8082ab8 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmb7t.vf" 1136768654 1372 788387fea833ef5963f4c5bffe33eb89 ""
+  "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmb8c.vf" 1136768654 3556 f148a8ed6ef01fed553027171e4f9b22 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmr7t.vf" 1136768654 1380 0ea3a3370054be6da6acd929ec569f06 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmr8c.vf" 1136768654 3556 8a9a6dcbcd146ef985683f677f4758a6 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmri7t.vf" 1136768654 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
@@ -211,14 +214,15 @@
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1700599895 10214 547fd4d29642cb7c80bf54b49d447f01 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/marko/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "c:/Users/marko/Desktop/NLP/ul-fri-nlp-course-project-2024-2025-optimus-prime/report/report.tex" 1748537017 13753 e51fbf8dab63bd7a88704589deb706d6 ""
+  "c:/Users/marko/Desktop/NLP/ul-fri-nlp-course-project-2024-2025-optimus-prime/report/report.tex" 1748546856 18245 d5d63abd814b0706c4299641d224c319 ""
   "ds_report.cls" 1742578920 8781 de13ff6a7bfb816061f21cc55269b72a ""
+  "fig/cmc.png" 1748544576 53890 8b8077209488a5579a4622d12d55499d ""
   "fig/flowchart.pdf" 1748536302 16845 588f397fac5bf68e3f56ae4c7b869b9c ""
   "logo.png" 1742578920 41371 df0da33a76ee7fd26ff61987cf7071f4 ""
-  "report.aux" 1748537019 1238 fd923c99ac70595ec8461cc995602641 "pdflatex"
-  "report.bbl" 1748536229 2203 631f49da82184a191578c4df5c5eed48 "bibtex report"
-  "report.out" 1748537019 100 bc4a82fc9c41f6d92576cede4808fc81 "pdflatex"
-  "report.tex" 1748537017 13753 e51fbf8dab63bd7a88704589deb706d6 ""
+  "report.aux" 1748546858 1611 b676a8fc19d539054792e74f7410f55f "pdflatex"
+  "report.bbl" 1748546405 2203 631f49da82184a191578c4df5c5eed48 "bibtex report"
+  "report.out" 1748546858 99 df7471697cda28c23992eff629cc8239 "pdflatex"
+  "report.tex" 1748546856 18245 d5d63abd814b0706c4299641d224c319 ""
   (generated)
   "report.aux"
   "report.log"
