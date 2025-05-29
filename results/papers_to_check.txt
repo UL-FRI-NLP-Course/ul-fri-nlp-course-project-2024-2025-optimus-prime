@@ -36,6 +36,42 @@ Title: Watching You: Global-guided Reciprocal Learning for Video-based Person Re
 Query: How does global-guided reciprocal learning disentangle high- and low-correlation features to improve person re-identification across video frames, and what role does temporal reciprocal learning play in enhancing fine-grained cues?
 Broader Query: What techniques utilize global guidance and reciprocal learning to enhance feature discrimination in video-based person re-identification?
 
+Title: Causality and "In-the-Wild" Video-Based Person Re-ID: A Survey
+Query: What are the latest causal modeling techniques used to improve the robustness of video-based person re-identification in real-world scenarios?
+Broader Query: How can causal reasoning enhance the performance of person re-identification systems compared to traditional correlation-based methods?
+
+Title: DART: Leveraging Distance for Test Time Adaptation in Person Re-Identification
+Query: How does the DART framework use distance-based objectives during test-time adaptation to reduce camera bias in person re-identification without access to source data?
+Broader Query: What strategies are being used to address camera-induced domain shifts in person re-identification through test-time adaptation methods?
+
+Title: ICPL-ReID: Identity-Conditional Prompt Learning for Multi-Spectral Object Re-Identification
+Query: How does ICPL leverage identity-conditional prompt learning and CLIP's cross-modal alignment to unify multi-spectral features for improved object re-identification?
+Broader Query: What role does prompt learning and cross-modal alignment play in addressing challenges in multi-spectral object re-identification?
+
+Title: Multilinear subspace learning for person re-identification based fusion of high order tensor features
+Query: How can multilinear subspace learning with tensor-based fusion of CNN and LOMO features enhance person re-identification accuracy across different camera views?
+Broader Query: What are the benefits of using tensor-based feature fusion and subspace learning in person re-identification tasks?
+
+Title: Differentiable Channel Selection in Self-Attention For Person Re-Identification
+Query: How does the DCS-Attention module improve person re-identification by using differentiable channel selection and the Information Bottleneck principle?
+Broader Query: What are the advantages of incorporating channel selection mechanisms into self-attention for person re-identification tasks?
+
+Title: Base-Detail Feature Learning Framework for Visible-Infrared Person Re-Identification
+Query: How does the Base-Detail Feature Learning Framework improve visible-infrared person re-identification by jointly capturing modality-shared and modality-specific features?
+Broader Query: What methods are used to address modality discrepancies in visible-infrared person re-identification tasks?
+
+Title: Enhancing Long-Term Re-Identification Robustness Using Synthetic Data: A Comparative Analysis
+Query: How does incorporating synthetic data and modeling material aging improve long-term robustness in person or object re-identification tasks?
+Broader Query: What are the benefits of using synthetic training data and aging-aware strategies in enhancing re-identification performance over time?
+
+Title: ShapeSpeak: Body Shape-Aware Textual Alignment for Visible-Infrared Person Re-Identification
+Query: How does the ShapeSpeak framework use body shape-aware textual alignment and vision-language models to improve visible-infrared person re-identification?
+Broader Query: How can incorporating body shape information and textual alignment enhance performance in cross-modal person re-identification tasks?
+
+Title: Distribution-aware Forgetting Compensation for Exemplar-Free Lifelong Person Re-identification
+Query: How does the DAFC model mitigate catastrophic forgetting in exemplar-free lifelong person re-identification through distribution-aware learning and text-driven prompt aggregation?
+Broader Query: What approaches help address forgetting and knowledge consolidation in lifelong person re-identification without relying on stored exemplars?
+
 # Databse queries
 Title: WildlifeReID-10k: Wildlife re-identification dataset with 10k individual animals
 Query: Is there a publicly available large-scale benchmark for animal re-identification that spans multiple species and addresses data leakage between training and test sets using time-aware and similarity-aware splits?
@@ -48,7 +84,6 @@ Broader Query: Are there extensive person re-identification datasets that captur
 Title: IUST_PersonReId: A New Domain in Person Re-Identification Datasets
 Query: Is there a person re-identification dataset focusing on challenges in Islamic cultural contexts, emphasizing modest clothing and scenes from markets, campuses, and mosques, to address fairness and bias in ReID?
 Broader Query: Are there datasets tailored to culturally specific contexts, such as Islamic regions, to improve fairness in person re-identification models?
-
 
 # A FEW EXAMPLES FROM CVF, TO SHOWCASE THE INCLUSION OF THE NEW DATABASE
 Title: Unsupervised Visible-Infrared Person Re-Identification via Progressive Graph Matching and Alternate Learning
