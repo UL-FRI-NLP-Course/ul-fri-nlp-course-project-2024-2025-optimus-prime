@@ -105,7 +105,7 @@ class OptimimusRAG:
 
     Rewritten query:"""
 
-        rewritten = self.llm(prompt).strip()
+        rewritten = self.llm(prompt).replace("+", "").strip()
 
         # Extract content after "Rewritten query:"
         if "Rewritten query:" in rewritten:
@@ -130,7 +130,7 @@ class OptimimusRAG:
         # NOTE rewrite the query for searching 
         query = self.rewrite_query(query, mode="search")
 
-        print(query)
+        print(f"Query rewritten for searching: {query}")
 
         # NOTE enrich the query
         query = self._enrich_query(query)
@@ -139,7 +139,7 @@ class OptimimusRAG:
 
         search = arxiv.Search(
             # NOTE: added this to focus more on computer vision
-            query=f"cat:cs.CV AND ({query})",
+            query= query,#f"cat:cs.CV AND ({query})",
             max_results=100,
             sort_by=arxiv.SortCriterion.Relevance,
             sort_order=arxiv.SortOrder.Descending,
@@ -206,10 +206,10 @@ class OptimimusRAG:
         arxiv_papers, arxiv_summaries = self._query_arxiv(query)
 
         #print(arxiv_papers)
-        print(query)
+    
         # NOTE rewrite the query for matching
         query = self.rewrite_query(query, mode="matching")
-        print(query)
+        print(f"Query rewritten for matching: {query}")
 
 
         # --- 2. Encode query once -----------------------------------------------------
