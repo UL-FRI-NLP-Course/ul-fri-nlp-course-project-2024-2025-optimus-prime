@@ -160,7 +160,7 @@ class OptimimusRAG:
                 "summary": summary,
                 "url": url
             })
-            summaries.append(summary)
+            summaries.append(f"{title} {summary}")
         
         return papers, summaries
     

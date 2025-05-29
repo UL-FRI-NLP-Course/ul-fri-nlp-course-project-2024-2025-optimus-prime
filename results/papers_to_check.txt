@@ -85,6 +85,22 @@ Title: IUST_PersonReId: A New Domain in Person Re-Identification Datasets
 Query: Is there a person re-identification dataset focusing on challenges in Islamic cultural contexts, emphasizing modest clothing and scenes from markets, campuses, and mosques, to address fairness and bias in ReID?
 Broader Query: Are there datasets tailored to culturally specific contexts, such as Islamic regions, to improve fairness in person re-identification models?
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # A FEW EXAMPLES FROM CVF, TO SHOWCASE THE INCLUSION OF THE NEW DATABASE
 Title: Unsupervised Visible-Infrared Person Re-Identification via Progressive Graph Matching and Alternate Learning
 Query: How does the progressive graph matching mechanism align visible and infrared modalities in an unsupervised manner, and how is alternate learning used to refine pseudo labels for cross-modality person re-identification?

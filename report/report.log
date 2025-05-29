@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.6)  28 MAY 2025 21:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.6)  29 MAY 2025 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -696,24 +696,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count337
@@ -773,7 +773,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 64.
+Package hyperref Info: Link coloring ON on input line 65.
 (report.out) (report.out)
 \@outlinefile=\write4
 \openout4 = `report.out'.
@@ -781,20 +781,20 @@ Package hyperref Info: Link coloring ON on input line 64.
 \c@lstlisting=\count343
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 64.
-Package microtype Info: Applying patch `item' on input line 64.
-Package microtype Info: Applying patch `toc' on input line 64.
-Package microtype Info: Applying patch `eqnum' on input line 64.
-Package microtype Info: Applying patch `footnote' on input line 64.
-Package microtype Info: Applying patch `verbatim' on input line 64.
-LaTeX Info: Redefining \microtypesetup on input line 64.
+LaTeX Info: Redefining \microtypecontext on input line 65.
+Package microtype Info: Applying patch `item' on input line 65.
+Package microtype Info: Applying patch `toc' on input line 65.
+Package microtype Info: Applying patch `eqnum' on input line 65.
+Package microtype Info: Applying patch `footnote' on input line 65.
+Package microtype Info: Applying patch `verbatim' on input line 65.
+LaTeX Info: Redefining \microtypesetup on input line 65.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 64.
+LaTeX Info: Redefining \showhyphens on input line 65.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -804,9 +804,9 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 <logo.png, id=10, 765.86125pt x 320.19624pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 71.
+Package pdftex.def Info: logo.png  used on input line 72.
 (pdftex.def)             Requested size: 153.16953pt x 64.0381pt.
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 71.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 72.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
@@ -817,17 +817,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bc/n' undefined
-(Font)              using `OT1/cmss/m/n' instead on input line 71.
+(Font)              using `OT1/cmss/m/n' instead on input line 72.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 71.
+(Font)              size <20.74> substituted on input line 72.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 71.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 72.
 (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
@@ -835,42 +835,42 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 71.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 72.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 71.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 72.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 71.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 72.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 71.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
  [1{C:/Users/marko/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
  <./logo.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 117.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 118.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
@@ -878,21 +878,24 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 136.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 137.
  (C:\Users\marko\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (45.78838pt too wide) in paragraph at lines 138--139
+Overfull \hbox (45.78838pt too wide) in paragraph at lines 139--140
 \OT1/ptm/m/n/10 (-20) are en-riched with terms like \OT1/pcr/m/n/10 "person re-identification"
  []
 
-<fig/tmp.png, id=39, 1027.84pt x 1541.76pt>
+<fig/tmp.png, id=38, 1027.84pt x 1541.76pt>
 File: fig/tmp.png Graphic file (type png)
 <use fig/tmp.png>
-Package pdftex.def Info: fig/tmp.png  used on input line 152.
+Package pdftex.def Info: fig/tmp.png  used on input line 153.
 (pdftex.def)             Requested size: 242.41745pt x 363.60754pt.
-[2 <./fig/tmp.png (PNG copy)>]
-Overfull \hbox (5.43968pt too wide) in paragraph at lines 175--179
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2]
+Overfull \hbox (5.43968pt too wide) in paragraph at lines 176--180
 \OT1/pcr/m/n/10 results/testing[]the[]model.docx\OT1/ptm/m/n/10 (-20) , sug-gest that RAG
  []
 
@@ -926,17 +929,17 @@ Underfull \hbox (badness 4193) in paragraph at lines 36--41
 AED: lastpage setting LastPage
 - LAST -
 Extra skip:0.0pt
-Left:497.74991pt/2.16492pt
-Right:512.66533pt/2.06494pt
-Split: 506.20761pt
-Output:506.20761pt
-Pageshrink: 9.0pt
-Pagestretch: 11.0pt
+Left:572.8575pt/2.16492pt
+Right:566.10226pt/2.06494pt
+Split: 578.01138pt
+Output:578.01138pt
+Pageshrink: 14.0pt
+Pagestretch: 21.0pt
 @colht:666.9326pt
-FLUSHEND [output]: 506.20761pt
-FLUSHEND [leftcolumn badness]: 14
-FUSHEND [rightcolumn badness]: 52
-[3] (report.aux)
+FLUSHEND [output]: 578.01138pt
+FLUSHEND [leftcolumn badness]: 27
+FUSHEND [rightcolumn badness]: 25
+[3 <./fig/tmp.png (PNG copy)>] (report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -953,15 +956,15 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: BC4A82FC9C41F6D92576CEDE4808FC81;100.
  ) 
 Here is how much of TeX's memory you used:
- 28485 strings out of 474486
- 519285 string characters out of 5743756
- 1951542 words of memory out of 5000000
+ 28487 strings out of 474486
+ 519303 string characters out of 5743756
+ 1947542 words of memory out of 5000000
  50021 multiletter control sequences out of 15000+600000
- 605718 words of font info for 261 fonts, out of 8000000 for 9000
+ 605838 words of font info for 263 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,101p,1087b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,13n,101p,1087b,499s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/marko/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (3 pages, 1890514 bytes).
+Output written on report.pdf (3 pages, 1892601 bytes).
 PDF statistics:
  102 PDF objects out of 1000 (max. 8388607)
  12 named destinations out of 1000 (max. 500000)
