@@ -1,7 +1,8 @@
 \begin{thebibliography}{1}
 
 \bibitem{kandpal2023longtail}
-Nimit Kandpal, Myle Ott, Xuezhi Li, Mike Lewis, Luke Zettlemoyer, and Dani Yogatama.
+Nimit Kandpal, Myle Ott, Xuezhi Li, Mike Lewis, Luke Zettlemoyer, and Dani
+  Yogatama.
 \newblock Large language models struggle to learn long-tail knowledge.
 \newblock In {\em International Conference on Machine Learning}, 2023.
 
@@ -11,28 +12,37 @@ Yuan Gao, Zihan Zhang, Xiaodong Liu, Furu Wei, and Jianfeng Gao.
 \newblock {\em arXiv preprint arXiv:2312.10997}, 2024.
 
 \bibitem{Chatbots_in_Academia}
-Maryamah Maryamah, Muhammad~Maula Irfani, Edric~Boby Tri~Raharjo, Netri~Alia Rahmi, Mohammad Ghani, and Indra~Kharisma Raharjana.
-\newblock Chatbots in academia: A retrieval-augmented generation approach for improved efficient information access.
-\newblock In {\em 2024 16th International Conference on Knowledge and Smart Technology (KST)}, pages 259--264, 2024.
+Maryamah Maryamah, Muhammad~Maula Irfani, Edric~Boby Tri~Raharjo, Netri~Alia
+  Rahmi, Mohammad Ghani, and Indra~Kharisma Raharjana.
+\newblock Chatbots in academia: A retrieval-augmented generation approach for
+  improved efficient information access.
+\newblock In {\em 2024 16th International Conference on Knowledge and Smart
+  Technology (KST)}, pages 259--264, 2024.
 
 \bibitem{afzal2024towards}
-Anum Afzal, Juraj Vladika, Gentrit Fazlija, Andrei Staradubets, and Florian Matthes.
-\newblock Towards optimizing a retrieval augmented generation using large language model on academic data.
+Anum Afzal, Juraj Vladika, Gentrit Fazlija, Andrei Staradubets, and Florian
+  Matthes.
+\newblock Towards optimizing a retrieval augmented generation using large
+  language model on academic data.
 \newblock {\em arXiv preprint arXiv:2411.08438}, 2024.
 
 \bibitem{yasin2024retrieval}
 Ahmet Yasin~Aytar, Kemal Kilic, and Kamer Kaya.
-\newblock A retrieval-augmented generation framework for academic literature navigation in data science.
+\newblock A retrieval-augmented generation framework for academic literature
+  navigation in data science.
 \newblock {\em arXiv e-prints}, pages arXiv--2412, 2024.
 
 \bibitem{chen2024benchmarking}
 Jiawei Chen, Hongyu Lin, Xianpei Han, and Le~Sun.
 \newblock Benchmarking large language models in retrieval-augmented generation.
-\newblock In {\em Proceedings of the Thirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-24)}, Beijing, China, 2024.
+\newblock In {\em Proceedings of the Thirty-Eighth AAAI Conference on
+  Artificial Intelligence (AAAI-24)}, Beijing, China, 2024.
 \newblock \{jiawei2020, hongyu, xianpei, sunle\}@iscas.ac.cn.
 
 \bibitem{lewis2020rag}
-Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rockt{\"a}schel, et~al.
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim
+  Rockt{\"a}schel, et~al.
 \newblock Retrieval-augmented generation for knowledge-intensive nlp tasks.
 \newblock In {\em Advances in Neural Information Processing Systems}, 2020.
 
