@@ -79,7 +79,7 @@ Large language models (LLMs) are increasingly used in conversational agents for 
 %----------------------------------------------------------------------------------------
 
 \section*{Introduction}
-Large language models (LLMs) have become increasingly capable in natural language understanding and generation, making them attractive for use in academic research support. However, their utility is limited by knowledge cutoffs and susceptibility to hallucinations, particularly in fast-evolving or specialized fields. To address these limitations, we developed a conversational assistant based on RAG, targeting the domain of person re-identification—a challenging task in computer vision.
+LLMs have become increasingly capable in natural language understanding and generation, making them attractive for use in academic research support. However, their utility is limited by knowledge cutoffs and susceptibility to hallucinations, particularly in fast-evolving or specialized fields. To address these limitations, we developed a conversational assistant based on RAG, targeting the domain of person re-identification—a challenging task in computer vision.
 
 Our system combines a pretrained language model with a retrieval pipeline that fetches recent research papers from sources like arXiv and CVF. The goal is to provide accurate, up-to-date answers by integrating external knowledge into the model's responses. In this project, we emphasize improvements to the retrieval process, which is critical for maximizing the relevance and utility of generated responses, by providing relevant context.
 
@@ -94,7 +94,7 @@ We implemented both a baseline and an enhanced retrieval pipeline. The latter in
 
 % Joined
 
-Large Language Models (LLMs) have demonstrated strong language understanding and generation capabilities, but they often struggle with hallucinations, outdated knowledge, and limited domain-specific accuracy, especially when handling specialized research queries~\cite{kandpal2023longtail}. Retrieval-Augmented Generation (RAG) addresses these challenges by enhancing LLMs with real-time information retrieval, improving factual accuracy and relevance~\cite{gao2024rag}. Early RAG models followed a basic retrieve-then-generate structure, but more advanced approaches have introduced techniques like query rewriting, reranking, and adaptive retrieval to improve context relevance and coherence~\cite{gao2024rag}.
+Large Language Models have demonstrated strong language understanding and generation capabilities, but they often struggle with hallucinations, outdated knowledge, and limited domain-specific accuracy, especially when handling specialized research queries~\cite{kandpal2023longtail}. Retrieval-Augmented Generation (RAG) addresses these challenges by enhancing LLMs with real-time information retrieval, improving factual accuracy and relevance~\cite{gao2024rag}. Early RAG models followed a basic retrieve-then-generate structure, but more advanced approaches have introduced techniques like query rewriting, reranking, and adaptive retrieval to improve context relevance and coherence~\cite{gao2024rag}.
 
 Recent research has shown the effectiveness of RAG-based systems for academic and domain-specific applications. For example,~\cite{Chatbots_in_Academia} implemented a RAG system using OpenAI Ada embeddings and GPT-3.5 to enhance information retrieval and synthesis for academic documents, demonstrating the importance of precise embedding strategies for research-based chatbots. Afzal et al.~\cite{afzal2024towards} focused on domain-specific data by creating the CurriculumQA dataset and optimizing retrieval with tailored evaluation metrics such as relevance, coherence, and faithfulness, highlighting the importance of fine-tuning for specific academic fields. Similarly, Yasin et al.~\cite{yasin2024retrieval} integrated advanced techniques—including fine-tuned embedding models, semantic chunking, and abstract-first retrieval—to improve the accuracy and relevance of scholarly content retrieval.
 
@@ -195,7 +195,7 @@ as the baseline does not have access to it.
 Since our primary focus was on improving retrieval performance, 
 we evaluated the system using metrics inspired by common recognition and retrieval tasks.
 
-The Cumulative Matching Characteristic (CMC)-like metric measures the probability 
+The CMC-like metric measures the probability 
 that the correct match appears within the top-$k$ retrieved results. 
 
 It is computed by checking, for each query, whether the correct item is found at rank 1, 
@@ -206,7 +206,7 @@ the likelihood that a user or system will find a correct identity
 within a small set of top candidates, which is crucial for efficient person re-identification 
 in large video databases.
 
-The mean Average Precision (mAP)-like metric evaluates the retrieval quality 
+The mAP-like metric evaluates the retrieval quality 
 across all relevant items for each query by calculating the average precision 
 at the ranks where relevant results appear, then averaging this precision across all queries.
 
@@ -224,7 +224,7 @@ This combination makes them well-suited to assess person re-identification and r
 
 \subsection*{Evaluation Results}
 To estimate uncertainty in our evaluation, we used non-parametric bootstrapping over the query set with 1000 resamples. 
-For each resample, we computed both CMC curves and mean Average Precision (mAP). 
+For each resample, we computed both CMC curves and mAP. 
 The reported values in Table~1 correspond to the mean and standard deviation across these samples.
 
 For the CMC plots (Figure~\ref{fig:cmc}), we show the mean curve along with confidence intervals.
@@ -280,8 +280,12 @@ Baseline & \textbf{0.199 ± 0.090} & \textbf{0.698 ± 0.103} & \textbf{0.369 ± 
 %------------------------------------------------
 
 \section*{Discussion}
+% Poudari da je evalvacija težka, ker delamo na unabeled data, in je treba ročno preverjati rezultate
+In this project, we developed a conversational agent using Retrieval-Augmented Generation (RAG) to assist with academic research in automatic re-identification. Our approach aimed to enhance the language model's responses by integrating recent research papers from arXiv and CVF, focusing on improving retrieval relevance and accuracy. 
+While the system showed promise in generating more informed responses, it also highlighted several challenges and areas for improvement.
+One of the main challenges we faced was the difficulty of evaluating retrieval performance on unlabeled data. Since our queries were designed to retrieve specific papers, we had to manually verify the relevance of retrieved results, which is time-consuming and subjective. This limitation underscores the need for better evaluation protocols in RAG systems, particularly when dealing with specialized domains where labeled datasets may not be readily available.
+Furthermore, while our enhanced retrieval pipeline utilized query rewriting and re-ranking strategies, it still struggled with retrieving the exact target papers in many cases. The issue might stem from the fact that the embedding model was trained on data, that resembled the raw abstracts, rather than the rewritten queries we used. This suggests that further fine-tuning of the embedding model, or using different model altogether could improve performance.
 
-Use the Discussion section to objectively evaluate your work, do not just put praise on everything you did, be critical and exposes flaws and weaknesses of your solution. You can also explain what you would do differently if you would be able to start again and what upgrades could be done on the project in the future.
 
 
 %----------------------------------------------------------------------------------------
