@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.29)  30 MAY 2025 10:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.29)  30 MAY 2025 10:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -893,7 +893,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [2]
 
 
-Overfull \hbox (12.15408pt too wide) in paragraph at lines 211--214
+Overfull \hbox (12.15408pt too wide) in paragraph at lines 210--213
 \OT1/ptm/m/n/10 (-20) To es-ti-mate un-cer-tainty in our eval-u-a-tion, we used non-parametric
  []
 
@@ -903,7 +903,7 @@ Overfull \hbox (12.15408pt too wide) in paragraph at lines 211--214
 <fig/cmc.png, id=86, 462.528pt x 346.896pt>
 File: fig/cmc.png Graphic file (type png)
 <use fig/cmc.png>
-Package pdftex.def Info: fig/cmc.png  used on input line 228.
+Package pdftex.def Info: fig/cmc.png  used on input line 227.
 (pdftex.def)             Requested size: 242.41745pt x 181.81612pt.
 
 
@@ -954,15 +954,15 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: DF7471697CDA28C23992EFF629CC8239;99.
  ) 
 Here is how much of TeX's memory you used:
- 28617 strings out of 469590
- 513371 string characters out of 5474519
+ 28616 strings out of 469590
+ 513353 string characters out of 5474519
  933263 words of memory out of 5000000
- 54683 multiletter control sequences out of 15000+600000
+ 54682 multiletter control sequences out of 15000+600000
  678263 words of font info for 294 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,101p,1129b,471s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (4 pages, 216097 bytes).
+Output written on report.pdf (4 pages, 215785 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams
