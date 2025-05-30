@@ -79,21 +79,11 @@ Large language models (LLMs) are increasingly used in conversational agents for 
 %----------------------------------------------------------------------------------------
 
 \section*{Introduction}
-We are developing a conversational agent with Retrieval-Augmented 
-Generation (RAG) to support academic research, focusing on the field of automatic
- re-identification. The system will leverage a pre-trained chatbot developed in
-  [TODO insert year], enhanced with a RAG mechanism to retrieve and incorporate the 
-  latest research papers from arXiv. To keep the model manageable and focused, 
-  we will limit the scope of retrieved papers to a specific recent time frame 
-  (e.g., one month). The retrieved papers will be processed and integrated into 
-  the chatbot's responses, allowing the agent to provide up-to-date and accurate 
-  answers about re-identification methods developed after the chatbot’s original 
-  training. To evaluate our approach an option is to manually check if the answers
-   were relevant for the chosen scientific area and if the papers used for the
-    queries were relevant for the specific query. Another option would be to compare
-     the answers of a chat-bot that was trained with more recent data. Possible 
-     pre-trained chatbots that we could use include Mistral 7B or Zephyr. 
+Large language models (LLMs) have become increasingly capable in natural language understanding and generation, making them attractive for use in academic research support. However, their utility is limited by knowledge cutoffs and susceptibility to hallucinations, particularly in fast-evolving or specialized fields. To address these limitations, we developed a conversational assistant based on RAG, targeting the domain of person re-identification—a challenging task in computer vision.
 
+Our system combines a pretrained language model with a retrieval pipeline that fetches recent research papers from sources like arXiv and CVF. The goal is to provide accurate, up-to-date answers by integrating external knowledge into the model's responses. In this project, we emphasize improvements to the retrieval process, which is critical for maximizing the relevance and utility of generated responses, by providing relevant context.
+
+We implemented both a baseline and an enhanced retrieval pipeline. The latter includes query rewriting, domain-specific filtering, and re-ranking strategies aimed at improving contextual relevance. Evaluation focues on the system's ability to retrieve relevant papers and generate accurate responses to academic queries, particularly those related to recent developments in automatic re-identification. We compare the performance of our baseline RAG system with the enhanced pipeline, assessing retrieval effectiveness using metrics inspired by Cumulative Matching Characteristic (CMC) and mean Average Precision (mAP).
 
 
 

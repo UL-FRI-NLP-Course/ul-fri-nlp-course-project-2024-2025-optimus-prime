@@ -430,6 +430,10 @@ INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.t
 INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
 INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
 INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
+INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT .\fig\cmc.png
 INPUT .\fig\cmc.png
 INPUT .\fig\cmc.png
@@ -438,10 +442,6 @@ INPUT .\fig\cmc.png
 INPUT .\fig\cmc.png
 INPUT .\fig\cmc.png
 INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8c.tfm
-INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
-INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
-INPUT C:\Users\marko\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT .\report.bbl
 INPUT .\report.bbl
 INPUT report.bbl
