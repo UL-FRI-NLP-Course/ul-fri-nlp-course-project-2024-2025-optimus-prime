@@ -1,8 +1,4 @@
 ### QUERIES ABOUT METHODS AVAILABLE ON ARXIV
-## The other metric would be some subjective response evaluation score from the chatbot - maybe not necessary
-## Definiraj dva različna queryja, enega malo bolj specifičnega enega pa malo manj - DONE
-# maybe we could make some type of CMC curve for ranking at which position it found the article - one curve for baseline - one for improved, maybe also one for all queries, one for specific, one for less specific?
-
 
 Title: A Video Is Worth Three Views: Trigeminal Transformers for Video-based Person Re-identification
 Query: Can you tell me about methods that use three self-view transformers and a cross-view transformer.
@@ -94,27 +90,4 @@ Broader Query: Are there datasets tailored to culturally specific contexts, such
 
 
 
-
-
-
-
-
-
-
-# A FEW EXAMPLES FROM CVF, TO SHOWCASE THE INCLUSION OF THE NEW DATABASE
-Title: Unsupervised Visible-Infrared Person Re-Identification via Progressive Graph Matching and Alternate Learning
-Query: How does the progressive graph matching mechanism align visible and infrared modalities in an unsupervised manner, and how is alternate learning used to refine pseudo labels for cross-modality person re-identification?
-Broader Query: What unsupervised methods exist for aligning visible and infrared data in person re-identification tasks?
-
-Title: Person Re-Identification Without Identification via Event Anonymization
-Query: How can person re-identification be achieved without relying on identity labels, using event-level anonymization to preserve privacy in training and inference?
-Broader Query: Are there privacy-preserving approaches to person re-identification that do not require explicit identity annotations?
-
-Title: View-decoupled Transformer for Person Re-identification under Aerial-ground Camera Network
-Query: How can a transformer framework decouple view-related and view-unrelated features to improve aerial-ground person re-identification performance across heterogeneous camera views?
-Broader Query: What strategies are employed to handle view discrepancies in aerial-ground person re-identification scenarios?
-
-Title: Pyramid Spatial-Temporal Aggregation for Video-Based Person Re-Identification
-Query: How can pyramid spatial-temporal aggregation leverage short-term and long-term temporal features with spatial and temporal attention mechanisms to improve video-based person re-identification accuracy
-Broader Query: What methods utilize hierarchical spatial-temporal aggregation to enhance accuracy in video-based person re-identification?
 

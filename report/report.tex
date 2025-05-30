@@ -83,7 +83,14 @@ LLMs have become increasingly capable in natural language understanding and gene
 
 Our system combines a pretrained language model with a retrieval pipeline that fetches recent research papers from sources like arXiv and CVF. The goal is to provide accurate, up-to-date answers by integrating external knowledge into the model's responses. In this project, we emphasize improvements to the retrieval process, which is critical for maximizing the relevance and utility of generated responses, by providing relevant context.
 
-We implemented both a baseline and an enhanced retrieval pipeline. The latter includes query rewriting, domain-specific filtering, and re-ranking strategies aimed at improving contextual relevance. Evaluation focues on the system's ability to retrieve relevant papers and generate accurate responses to academic queries, particularly those related to recent developments in automatic re-identification. We compare the performance of our baseline RAG system with the enhanced pipeline, assessing retrieval effectiveness using metrics inspired by Cumulative Matching Characteristic (CMC) and mean Average Precision (mAP).
+We implemented both a baseline and an enhanced retrieval pipeline.
+ The latter includes query rewriting, domain-specific filtering, 
+ and re-ranking strategies aimed at improving contextual relevance.
+  Evaluation focuses on the system's ability to retrieve relevant papers and generate
+   accurate responses to academic queries, particularly those related to recent developments 
+   in automatic re-identification. We compare the performance of our baseline RAG system 
+   with the enhanced pipeline, assessing retrieval effectiveness using 
+   metrics like MRR, nDCG and CMC.
 
 
 
@@ -106,13 +113,15 @@ In our project, we aim to address these issues by developing a RAG-based chatbot
 \section*{Methods}
 \subsection*{Baseline}
 \subsubsection*{Paper Retrieval from arXiv}
-We begin by retrieving candidate papers using the official arXiv API. For each paper, we extract its title, abstract, and metadata. To enable semantic similarity-based filtering, both the user query and the abstracts are embedded using the \textit{allenai-specter} SentenceTransformer model, which is trained to map scientific documents into a dense vector space. We compute cosine similarity between the query embedding and each abstract embedding, and select the top-$k$ most relevant papers ($k=30$ by default).
+We begin by retrieving candidate papers using the official arXiv API. For each paper, we extract its title, abstract, and metadata. To enable semantic similarity-based filtering, both the user query and the abstracts are embedded using the \textit{allenai-specter} SentenceTransformer model, which is trained to map scientific documents into a dense vector space. We compute cosine similarity between the query embedding and each abstract embedding, and select the top-$k$ most 
+relevant papers (In the main evaluation in this project we use $k=30$).
 
 \subsubsection*{Context Construction}
 The titles and abstracts of the top-ranked papers are concatenated into a single text block to serve as external context. This context is inserted into the prompt presented to the language model. No chunking, reranking, or content selection is applied at this stage beyond the similarity-based retrieval.
 
 \subsubsection*{Language Model Inference}
-We use \textit{Mistral-7B-Instruct-v0.2} as the language model backend. To enable efficient inference on commodity hardware, the model is loaded using 4-bit quantization with \textit{bitsandbytes}, applying NF4 quantization and bfloat16 compute precision. The model is wrapped with Hugging Face's text-generation pipeline and integrated with LangChain to enable prompt-based question answering. Prompt templates include both the constructed context and the current user query. For comparison, we also evaluate answers generated without any retrieved context.
+We use \textit{Mistral-7B-Instruct-v0.2} as the language model backend. To enable efficient inference on commodity hardware, the model is loaded using 4-bit quantization with \textit{bitsandbytes}, applying NF4 quantization and bfloat16 compute precision. The model is wrapped with Hugging Face's text-generation pipeline and integrated with LangChain to enable prompt-based question answering. Prompt templates include both the constructed context and the current user query.
+ For comparison, we also evaluate answers generated without any retrieved context in the preliminary results.
 
 \subsubsection*{System Behavior}
 The system retains a basic conversational memory by concatenating the most recent user query with the current one. This helps preserve short-term context without implementing a full dialogue memory or rewriting mechanism. No fine-tuning is performed, and no re-ranking, filtering, or external knowledge base is used. This baseline is intended to evaluate performance with minimal architectural complexity.
@@ -127,16 +136,16 @@ A modified RAG system was implemented to explore potential improvements in relev
 
     \item \textit{Domain-specific augmentation}: Rewritten queries are enriched with terms such as \textit{person re-identification} and restricted to the \textit{cs.CV} category to better focus the search on relevant literature.
 
-    \item \textit{Local database integration}: A local CVF paper database supplements arXiv results, expanding the overall coverage of relevant academic sources.
-
-    \item \textit{Unified re-ranking}: Retrieved documents are encoded using \textit{allenai-specter} and re-ranked via cosine similarity against the match-stage query.
+    \item \textit{Local database integration}: A local CVF paper database supplements 
+    arXiv results, expanding the overall coverage of relevant academic sources. To generate this 
+    local database we designed a web-scraper that scraped the papers from recent most influential 
+    computer vision conferences(CVPR, ICCV, ECCV).
 
     \item \textit{Task-specific prompting}: Prompts used during response generation are tailored for the Re-ID task to better align outputs with domain-specific needs.
 \end{itemize}
 
 Figure~\ref{fig:retrieval_pipeline} presents an overview of the enhanced 
-pipeline, including the two-stage query rewriting, integration of a
- local CVF database, and re-ranking strategy. These modifications were 
+pipeline. These modifications were 
  evaluated against the baseline architecture, with comparative analysis 
  focusing on retrieval relevance.
 
@@ -155,24 +164,17 @@ pipeline, including the two-stage query rewriting, integration of a
 
 
 \section*{Preliminary results }
-To evaluate the effectiveness of our RAG-enhanced approach, we tested it on scientific
- questions related to papers published after December 2023. The goal was to determine 
- whether the system could incorporate recent research not seen during the original
-  model’s training.
+We evaluated our RAG-enhanced approach on scientific questions targeting papers published after December 2023 to test its ability to incorporate recent, unseen research.
 
-Across a range of prompts, results showed that while the system often failed to retrieve 
-the exact target paper with top-$k=5$, it still produced more informative and current responses by leveraging similar recent articles. Increasing $k$ to 10 improved retrieval in several cases—for example, retrieving a nearly identical sentiment analysis paper by the same authors.
+While top-$k=5$ retrieval rarely surfaced the exact target paper, responses were often more informative and current due to related recent articles. Increasing to $k=10$ improved retrieval in several cases—for example, retrieving a near-duplicate sentiment analysis paper by the same authors.
 
-Refined queries also led to improved results. For a fast and robust covariance estimator, adding terms like “low contamination regime” and “near-linear sample complexity” helped surface the correct article. In contrast, generic queries often led the model to irrelevant domains, such as quantum mechanics.
+Query specificity significantly improved performance. \\Adding terms like “low contamination regime” and “near-linear sample complexity” helped retrieve the correct covariance estimator paper. Generic queries, by contrast, often led to irrelevant domains (e.g., quantum mechanics).
 
-For topics like NP-complete problems and object detection, specificity again proved critical. While exact matches were rare, the RAG system offered responses more reflective of recent research trends than the baseline. However, it occasionally exhibited erratic behavior, such as generating its own sub-questions, which significantly increased inference time.
+For complex topics like NP-complete problems and object detection, specific queries led to responses better aligned with recent research trends. However, the system occasionally generated sub-questions, increasing inference time.
 
-Overall, these preliminary findings suggest that RAG enhances response relevance and currency, particularly with higher $k$
-  and well-formed queries. However, retrieval control and relevance filtering remain
-  areas for future improvement. Note that these results were collected using the baseline method. 
-  
+These results suggest RAG improves relevance and recency, especially with larger $k$ and well-formed queries, though retrieval control remains a challenge. Full examples and logs are available in results/preliminary\_tests.docx.
+
 \section*{Results}
-
 \subsection*{Evaluation Description}
 
 As part of the evaluation protocol, we simulate the retrieval task by selecting a specific target paper
@@ -183,8 +185,13 @@ and generating two types of queries per paper:
     \item \textit{Broad} query: incorporates more general or related terms to capture a wider set of relevant documents.
 \end{itemize}
 
+The queries and paper titles are available in the \textit{results/queries.txt} file.
+
 This setup allows us to assess the retrieval system’s ability to rank truly relevant papers near the top of the search results,
 which simulates real-world scenarios where researchers look for both precise and comprehensive literature coverage.
+
+We search for 100 papers with the arxiv module and then choose the top 30 most similar 
+papers to use in our evalution. 
 
 To ensure a fair comparison with the baseline system, we did not include our local CVF paper database during evaluation,
 as the baseline does not have access to it.
@@ -250,6 +257,8 @@ Baseline & \textbf{0.369 ± 0.078} & \textbf{1.309 ± 0.214} \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Note that you can access the full rankings of all of of the papers in \textit{results/}
 
 
 
