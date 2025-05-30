@@ -261,14 +261,15 @@ Baseline & \textbf{0.369 ± 0.078} & \textbf{1.309 ± 0.214} \\
 \section*{Discussion}
 % evalvacija težka, ker delamo na unabeled data, in je treba ročno preverjati rezultate
 While the system showed promise in generating more informed responses, it also highlighted several challenges and areas for improvement.
-One of the main challenges we faced was the difficulty of evaluating retrieval performance on unlabeled data. Since our queries were designed to retrieve specific papers, we had to manually verify the relevance of retrieved results, which is time-consuming and subjective. This limitation shows the need for better evaluation protocols in RAG systems, particularly when dealing with specialized domains where labeled datasets may not be readily available.
+One of the main challenges we faced was the difficulty of evaluating retrieval performance on unlabeled data. Since our queries were designed to retrieve specific papers, we had to manually verify the relevance of retrieved results, which is time-consuming and subjective. Moreover, subjectivity was also present in query writing itself, and since we required two queries per article, it was difficult to keep the two independent from one another. This limitation shows the need for better evaluation protocols in RAG systems, particularly when dealing with specialized domains where labeled datasets may not be readily available.
 
 Furthermore, while our enhanced retrieval pipeline utilized query rewriting and re-ranking strategies, it still underperformed. The issue might stem from the fact that the embedding model was trained on data, that resembled the raw abstracts, rather than the rewritten queries we used. This suggests that further fine-tuning of the embedding model, or using different model altogether could be more suitable for our use-case, while the current model can still serve as a baseline.
 
+Moreover, another possible approach would be not to only look at man-made abstracts, but also use a summarization LLM, to draw the important information from the entire paper.
 
 \section*{Conclusion}
 In this project, we developed a conversational agent using Retrieval-Augmented Generation (RAG) to assist with academic research in automatic re-identification. Our approach aimed to enhance the language model's responses by integrating recent research papers from arXiv and CVF, focusing on improving retrieval relevance and accuracy. 
-
+While our modified RAG approach did not produce results that were better than the baseline, it provided meaningful insights into its drabwacks, as well as opened further research questions.
 
 
 %----------------------------------------------------------------------------------------
