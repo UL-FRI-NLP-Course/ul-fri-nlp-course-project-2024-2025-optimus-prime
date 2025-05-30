@@ -65,5 +65,5 @@ This is a project implementing RAG to improve a chatbot's responses to queries a
 - Maybe build a better embedding by combining more information than just the abstract
 - Finding irrelevant results 
 - Maybe we could have multiple models and switch based on the needs (accuracy vs speed)
-- Potential improvement could be made by using summarization LLMs instead of articles when looking through papers.
+- Potential improvement could be made by using summarization LLMs instead of abstracts when looking through papers.
 
