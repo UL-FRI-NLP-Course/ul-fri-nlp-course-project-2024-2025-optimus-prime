@@ -1,15 +1,20 @@
+import sqlite3
+import time
+
 import requests
 from bs4 import BeautifulSoup
-import time
-import sqlite3
+
+from utils import get_param
+
+BASE_URL = get_param("URL_CVF")
+
 
 def scrape_conference_papers(conference, years):
-    base_url = "https://openaccess.thecvf.com"
     papers = []
 
     for year in years:
         # Correct URL pattern
-        conference_url = f"{base_url}/{conference}{year}?day=all"
+        conference_url = f"{BASE_URL}/{conference}{year}?day=all"
         print(f"Scraping: {conference_url}")
         try:
             response = requests.get(conference_url, timeout=10)
@@ -27,7 +32,7 @@ def scrape_conference_papers(conference, years):
                 continue
 
             title = title_tag.text.strip()
-            paper_url = base_url + title_tag["href"]
+            paper_url = BASE_URL + title_tag["href"]
 
             # Pause between requests to avoid rate limiting
             time.sleep(0.01)
@@ -41,21 +46,27 @@ def scrape_conference_papers(conference, years):
             else:
                 paper_soup = BeautifulSoup(paper_page.content, "html.parser")
                 abstract_tag = paper_soup.find("div", id="abstract")
-                abstract = abstract_tag.text.strip().replace("Abstract", "").strip() if abstract_tag else "No abstract found"
+                abstract = (
+                    abstract_tag.text.strip().replace("Abstract", "").strip()
+                    if abstract_tag
+                    else "No abstract found"
+                )
 
-            papers.append({
-                "title": title,
-                "abstract": abstract,
-                "url": paper_url,
-                "conference": conference,
-                "year": year
-            })
+            papers.append(
+                {
+                    "title": title,
+                    "abstract": abstract,
+                    "url": paper_url,
+                    "conference": conference,
+                    "year": year,
+                }
+            )
 
     return papers
 
 
 def scrape_all_conferences():
-    conferences = ['CVPR', 'ICCV', 'ECCV']
+    conferences = ["CVPR", "ICCV", "ECCV"]
     years = [2021, 2022, 2023, 2024]
     all_papers = []
 
@@ -74,13 +85,14 @@ if __name__ == "__main__":
         print(f"Abstract: {paper['abstract']}")
         print(f"URL: {paper['url']}")
         print(f"Conference: {paper['conference']}, Year: {paper['year']}")
-        print("="*100)
+        print("=" * 100)
 
 
 def initialize_db(db_name="cvf_papers.db"):
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
-    cursor.execute("""
+    cursor.execute(
+        """
         CREATE TABLE IF NOT EXISTS papers (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT,
@@ -89,27 +101,37 @@ def initialize_db(db_name="cvf_papers.db"):
             conference TEXT,
             year INTEGER
         )
-    """)
+    """
+    )
     conn.commit()
     return conn
+
 
 def insert_paper(conn, paper):
     cursor = conn.cursor()
     try:
-        cursor.execute("""
+        cursor.execute(
+            """
             INSERT INTO papers (title, abstract, url, conference, year)
             VALUES (?, ?, ?, ?, ?)
-        """, (paper["title"], paper["abstract"], paper["url"], paper["conference"], paper["year"]))
+        """,
+            (
+                paper["title"],
+                paper["abstract"],
+                paper["url"],
+                paper["conference"],
+                paper["year"],
+            ),
+        )
         conn.commit()
     except sqlite3.IntegrityError:
         # Paper already exists
         pass
-     
 
 
 if __name__ == "__main__":
     conn = initialize_db()
-    conferences = ['CVPR', 'ICCV', 'ECCV']
+    conferences = ["CVPR", "ICCV", "ECCV"]
     years = [2022, 2023, 2024]
 
     for conference in conferences:
@@ -119,11 +141,13 @@ if __name__ == "__main__":
 
     # Example: Print the first 3 stored papers
     cursor = conn.cursor()
-    for row in cursor.execute("SELECT title, abstract, url, conference, year FROM papers LIMIT 3"):
+    for row in cursor.execute(
+        "SELECT title, abstract, url, conference, year FROM papers LIMIT 3"
+    ):
         print(f"Title: {row[0]}")
         print(f"Abstract: {row[1]}")
         print(f"URL: {row[2]}")
         print(f"Conference: {row[3]}, Year: {row[4]}")
-        print("="*100)
+        print("=" * 100)
 
     conn.close()
