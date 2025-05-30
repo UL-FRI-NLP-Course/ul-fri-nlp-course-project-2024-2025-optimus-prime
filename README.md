@@ -27,43 +27,19 @@ This is a project implementing RAG to improve a chatbot's responses to queries a
 - **code/**
     - `create_cvf_database.py` - create a local database by scraping cvf open access
     - `create_db_arxiv.py` - create a local database of papers scraped from arxiv (not used anymore since we can directly scrape when the user has a query)
+    - `evaluation.ipynb` - code for calculating and plotting evaluation metrics
     - `finding_similar_papers_directly_with_arxiv_module.ipynb` - experimental notebook
     - `finding_similar_papers_using_local_db.ipynb` - experimental notebook
     - `optirag.py` - baseline implementation script
     - `optirag_improved.py` - final implementation script
+    - `query_test.py` - short script to test a query
+    - `utils.py` - utility functions for easier reuse
+
+- **report/**
+    - `report.pdf` - project report
 
 - **results/** 
     - `papers_to_check.txt` - a list of paper titles and queries we checked 
     - `preliminary_tests.docx` - opinion based test for the baseline model
-
-
-
-
-## Current solution
-- We begin by using the Python `arxiv` module to scrape paper titles, abstracts, and author information. 
-- To continue the retrieval stage, we embed both the user query and the paper abstracts, and identify the most relevant papers using cosine similarity.
-- We then generate a response by passing the context—composed of the five most similar paper summaries—to our base chatbot via the  `langchain` module
-- For the base chatbot we are using the `Mistral-7B-Instruct-v0.2` quantized to 4 bits for efficiency. 
-- For embedding extraction, we use the `allenai-specter` model, which is specifically designed for representing scientific documents.
-
-## Preliminary results
-- To evaluate performance, we queried both the base chatbot and our RAG-enhanced model, then compared their responses.
-- To highlight the improvement, we focused on papers or methods published after the release of the base chatbot. 
-- The results are found in the `testing_th_model.docx` file. They are more description based and not so much definitive.
-
-## Improved solution
-- We attempt to improve our RAG system by adding two-stage query rewriting, domain-specific augmentation, amongst other features.
-
-## Final results
-- To evaluate retrieval performance we write specific and more general queries about targetted articles and test whether they are retrieved by the model.
--Base solution appears to work better and our improvements do not seem to actually improve anything.
-
-## Future directions
-- Adding other data to score papers (like citations - use heuristics), that isn't available through the `arxiv` api
-- Try to improve the prompt even further
-- Currently the model can be used for any research questions, maybe we could somehow focus on a more specific field (for example by adding some keywords to the web search). 
-- Maybe build a better embedding by combining more information than just the abstract
-- Finding irrelevant results 
-- Maybe we could have multiple models and switch based on the needs (accuracy vs speed)
-- Potential improvement could be made by using summarization LLMs instead of abstracts when looking through papers.
-
+    - `queries` - all queries that were used to test paper retrieval
+    - `results.xlsx` - results obtained from retrieval testing
