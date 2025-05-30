@@ -2,7 +2,7 @@
 
 ## Contents
 1. [Short description](#short-description)
-2. [Team](#team)
+2. [Team](#student-team)
 3. [Reproducing the project](#reproducing-the-project)
 4. [Structure of the repository](#structure-of-the-repository)
 
