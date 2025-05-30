@@ -280,11 +280,12 @@ Baseline & \textbf{0.199 ± 0.090} & \textbf{0.698 ± 0.103} & \textbf{0.369 ± 
 %------------------------------------------------
 
 \section*{Discussion}
-% Poudari da je evalvacija težka, ker delamo na unabeled data, in je treba ročno preverjati rezultate
+% evalvacija težka, ker delamo na unabeled data, in je treba ročno preverjati rezultate
 In this project, we developed a conversational agent using Retrieval-Augmented Generation (RAG) to assist with academic research in automatic re-identification. Our approach aimed to enhance the language model's responses by integrating recent research papers from arXiv and CVF, focusing on improving retrieval relevance and accuracy. 
 While the system showed promise in generating more informed responses, it also highlighted several challenges and areas for improvement.
-One of the main challenges we faced was the difficulty of evaluating retrieval performance on unlabeled data. Since our queries were designed to retrieve specific papers, we had to manually verify the relevance of retrieved results, which is time-consuming and subjective. This limitation underscores the need for better evaluation protocols in RAG systems, particularly when dealing with specialized domains where labeled datasets may not be readily available.
-Furthermore, while our enhanced retrieval pipeline utilized query rewriting and re-ranking strategies, it still struggled with retrieving the exact target papers in many cases. The issue might stem from the fact that the embedding model was trained on data, that resembled the raw abstracts, rather than the rewritten queries we used. This suggests that further fine-tuning of the embedding model, or using different model altogether could improve performance.
+One of the main challenges we faced was the difficulty of evaluating retrieval performance on unlabeled data. Since our queries were designed to retrieve specific papers, we had to manually verify the relevance of retrieved results, which is time-consuming and subjective. This limitation shows the need for better evaluation protocols in RAG systems, particularly when dealing with specialized domains where labeled datasets may not be readily available.
+
+Furthermore, while our enhanced retrieval pipeline utilized query rewriting and re-ranking strategies, it still underperformed. The issue might stem from the fact that the embedding model was trained on data, that resembled the raw abstracts, rather than the rewritten queries we used. This suggests that further fine-tuning of the embedding model, or using different model altogether could be more suitable for our use-case, while the current model can still serve as a baseline.
 
 
 
