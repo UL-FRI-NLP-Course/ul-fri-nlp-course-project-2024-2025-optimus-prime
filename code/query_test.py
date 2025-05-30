@@ -1,11 +1,11 @@
 import sqlite3
 
 # Create a connection to the SQLite database
-conn = sqlite3.connect('cvf_papers.db')
+conn = sqlite3.connect("cvf_papers.db")
 cursor = conn.cursor()
 
 # Select all the papers from the 'papers' table
-cursor.execute('SELECT * FROM papers')
+cursor.execute("SELECT * FROM papers")
 
 # Fetch all rows from the result of the query
 papers = cursor.fetchall()
@@ -18,7 +18,7 @@ for i, paper in enumerate(papers):
     print(f"URL: {paper[3]}")
     print(f"Conference: {paper[4]}")
     print(f"Year: {paper[5]}")
-    print('-' * 80)
+    print("-" * 80)
     if i >= 10:
         break
 

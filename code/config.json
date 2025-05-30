@@ -1,0 +1,6 @@
+{
+    "URL_CVF": "https://openaccess.thecvf.com",
+    "ARXIV_URL": "https://arxiv.org/abs/",
+    "LLM_MODEL": "mistralai/Mistral-7B-Instruct-v0.2", 
+    "SENTENCE_TRANSFORMER": "allenai-specter"
+}

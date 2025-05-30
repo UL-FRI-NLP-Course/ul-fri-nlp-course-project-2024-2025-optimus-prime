@@ -1,12 +1,18 @@
-import arxiv
 import sqlite3
 
+import arxiv
+
+from utils import get_param
+
 # Create a connection to an SQLite database
-conn = sqlite3.connect('arxiv_papers.db')
+conn = sqlite3.connect("arxiv_papers.db")
 cursor = conn.cursor()
 
+ARXIV_URL = get_param("ARXIV_URL")
+
 # Create a table to store the paper information
-cursor.execute('''
+cursor.execute(
+    """
 CREATE TABLE IF NOT EXISTS papers (
     id INTEGER PRIMARY KEY,
     title TEXT,
@@ -15,7 +21,8 @@ CREATE TABLE IF NOT EXISTS papers (
     published_date TEXT,
     arxiv_url TEXT
 )
-''')
+"""
+)
 
 # Define your query
 query = "person re-identification"
@@ -28,18 +35,23 @@ results = search.results()
 for result in results:
     title = result.title
     # Extract author names as strings
-    authors = ', '.join([author.name for author in result.authors])
+    authors = ", ".join([author.name for author in result.authors])
     summary = result.summary
     published_date = result.published
-    arxiv_url = f"https://arxiv.org/abs/{result.entry_id.split('/')[-1]}"
-    
-    cursor.execute('''
+    arxiv_url = f"{ARXIV_URL}{result.entry_id.split('/')[-1]}"
+
+    cursor.execute(
+        """
     INSERT INTO papers (title, authors, summary, published_date, arxiv_url)
     VALUES (?, ?, ?, ?, ?)
-    ''', (title, authors, summary, published_date, arxiv_url))
+    """,
+        (title, authors, summary, published_date, arxiv_url),
+    )
 
 # Commit changes and close the database connection
 conn.commit()
 conn.close()
 
-print("Database has been populated with arXiv papers related to 'person re-identification'.")
+print(
+    "Database has been populated with arXiv papers related to 'person re-identification'."
+)
