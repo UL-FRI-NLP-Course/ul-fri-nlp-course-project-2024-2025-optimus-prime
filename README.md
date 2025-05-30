@@ -34,12 +34,13 @@ This is a project implementing RAG to improve a chatbot's responses to queries a
     - `optirag_improved.py` - final implementation script
     - `query_test.py` - short script to test a query
     - `utils.py` - utility functions for easier reuse
-
-- **report/**
-    - `report.pdf` - project report
+    
 
 - **results/** 
     - `papers_to_check.txt` - a list of paper titles and queries we checked 
     - `preliminary_tests.docx` - opinion based test for the baseline model
     - `queries` - all queries that were used to test paper retrieval
     - `results.xlsx` - results obtained from retrieval testing
+
+
+- **report.pdf** - the project report
